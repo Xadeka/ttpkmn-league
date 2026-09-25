@@ -1,12 +1,13 @@
 import Link from "./components/link";
+import { Heading1, Heading2, Paragraph } from "./components/typography";
 import "./home.css";
 
 function Home() {
   return (
     <div className="container">
-      <h1>Time Travelers Pokemon League</h1>
+      <Heading1>Time Travelers Pokemon League</Heading1>
       <section className="link-list">
-        <h2>Quick Links</h2>
+        <Heading2>Quick Links</Heading2>
         <span hidden>
           <Link
             href="https://timetravelersonline.com/pages/pokemon-tcg-pitch-black-pre-release"
@@ -70,58 +71,58 @@ function Home() {
       </section>
 
       <section>
-        <h2>Wi-Fi Info</h2>
-        <p>
+        <Heading2>Wi-Fi Info</Heading2>
+        <Paragraph>
           <strong>Network:</strong> Time Travelers_Guest
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>Password:</strong> TT_Guest
-        </p>
+        </Paragraph>
       </section>
 
       <section>
-        <h2>Upcoming Events</h2>
-        <p>
+        <Heading2>Upcoming Events</Heading2>
+        <Paragraph>
           <strong>September 5:</strong> League 11:30 AM
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>September 12:</strong> League 11:30 AM
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>September 12:</strong> Gym Leader Challenge 2:00 PM
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>September 19:</strong> League 11:30 AM
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>September 26:</strong> League Challenge 12:00 PM
-        </p>
+        </Paragraph>
       </section>
 
       <section>
-        <h2>September League Challenge</h2>
-        <p>
+        <Heading2>September League Challenge</Heading2>
+        <Paragraph>
           <strong>Location:</strong> 3116 12 Mile Road, Berkley, MI 48072
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>Date:</strong> September 26, 2026
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>Time:</strong> Round 1 starts at 12:05 PM. Store opens at
           11:00 AM. If you do not have your decklist submitted by noon, you will
           receive a loss for round 1.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>Rounds:</strong> X Swiss rounds&mdash;best of one&mdash;30
           minutes + 3 turns
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           <strong>Staff:</strong> Hunter Potter
-        </p>
+        </Paragraph>
       </section>
 
       <section>
-        <h2>Championship Points Table (League Challenge)</h2>
+        <Heading2>Championship Points Table (League Challenge)</Heading2>
         <table
           style={{ "border-collapse": "collapse", width: "100%", border: 0 }}
         >
