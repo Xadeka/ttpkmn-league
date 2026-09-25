@@ -1,3 +1,4 @@
+import Link from "./components/link";
 import "./home.css";
 
 function Home() {
@@ -7,61 +8,65 @@ function Home() {
       <section className="link-list">
         <h2>Quick Links</h2>
         <span hidden>
-          <a
+          <Link
             href="https://timetravelersonline.com/pages/pokemon-tcg-pitch-black-pre-release"
             target="_blank"
             rel="noopener"
           >
             📝 Pitch Black Prerelease Registration
-          </a>
+          </Link>
         </span>
         <span hidden>
-          <a href="https://forms.gle/KdDwpGgSWXMvN45R8" target="_blank">
+          <Link href="https://forms.gle/KdDwpGgSWXMvN45R8" target="_blank">
             🃏 Decklist Submission
-          </a>
+          </Link>
         </span>
         <span hidden>
-          <a href="pairings.html" target="_blank" rel="noopener">
+          <Link href="pairings.html" target="_blank" rel="noopener">
             🔗 Pairings
-          </a>
+          </Link>
         </span>
         <span>
-          <a href="pairings_default.html" rel="noopener">
+          <Link href="pairings_default.html" rel="noopener">
             🔗 Pairings
-          </a>
+          </Link>
         </span>
         <span hidden>
-          <a href="standings.html" target="_blank" rel="noopener">
+          <Link href="standings.html" target="_blank" rel="noopener">
             📊 Standings
-          </a>
+          </Link>
         </span>
         <span hidden>
-          <a
+          <Link
             href="https://forms.gle/mbcM8xtzFN6HCDUk6"
             target="_blank"
             rel="noopener"
             hidden
           >
             ✍️ Post Event Survey
-          </a>
+          </Link>
         </span>
-        <a href="https://discord.gg/bQNVEmvh4u" target="_blank" rel="noopener">
+        <Link
+          href="https://discord.gg/bQNVEmvh4u"
+          target="_blank"
+          rel="noopener"
+        >
           <img
             src="discord.png"
             style={{ width: 18, height: 18, verticalAlign: "text-bottom" }}
           />{" "}
           Time Travelers Discord
-        </a>
-        <a href="https://x.com/TTPKMN" target="_blank" rel="noopener">
+        </Link>
+        <Link href="https://x.com/TTPKMN" target="_blank" rel="noopener">
           <img
             src="twitter.png"
             style={{ width: 18, height: 18, verticalAlign: "text-bottom" }}
           />{" "}
           League Twitter
-        </a>
-        <a href="event_results.html" target="_blank" rel="noopener">
+        </Link>
+        <Link href="event_results.html" target="_blank" rel="noopener">
           🏆 Past Event Results
-        </a>
+        </Link>
       </section>
 
       <section>
@@ -173,12 +178,12 @@ function Home() {
         </table>
         <hr />
         <small>
-          <a
+          <Link
             href="https://championships.pokemon.com/en-us/about/league-challenges-and-league-cup"
             target="_blank"
           >
             Source
-          </a>
+          </Link>
         </small>
       </section>
     </div>
