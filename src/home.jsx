@@ -125,20 +125,20 @@ function Home() {
             <col style={{ width: "33.3328%" }} />
             <col style={{ width: "33.3328%" }} />
           </colgroup>
+          <thead>
+            <tr>
+              <th>
+                <strong>Placement</strong>
+              </th>
+              <th>
+                <strong>Kicker (# of players)</strong>
+              </th>
+              <th>
+                <strong>Points</strong>
+              </th>
+            </tr>
+          </thead>
           <tbody>
-            <thead>
-              <tr>
-                <th>
-                  <strong>Placement</strong>
-                </th>
-                <th>
-                  <strong>Kicker (# of players)</strong>
-                </th>
-                <th>
-                  <strong>Points</strong>
-                </th>
-              </tr>
-            </thead>
             <tr>
               <td>1</td>
               <td>0</td>
