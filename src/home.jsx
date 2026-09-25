@@ -12,7 +12,6 @@ function Home() {
           <Link
             href="https://timetravelersonline.com/pages/pokemon-tcg-pitch-black-pre-release"
             target="_blank"
-            rel="noopener"
           >
             📝 Pitch Black Prerelease Registration
           </Link>
@@ -23,7 +22,7 @@ function Home() {
           </Link>
         </span>
         <span hidden>
-          <Link href="pairings.html" target="_blank" rel="noopener">
+          <Link href="pairings.html" target="_blank">
             🔗 Pairings
           </Link>
         </span>
@@ -33,7 +32,7 @@ function Home() {
           </Link>
         </span>
         <span hidden>
-          <Link href="standings.html" target="_blank" rel="noopener">
+          <Link href="standings.html" target="_blank">
             📊 Standings
           </Link>
         </span>
@@ -41,31 +40,26 @@ function Home() {
           <Link
             href="https://forms.gle/mbcM8xtzFN6HCDUk6"
             target="_blank"
-            rel="noopener"
             hidden
           >
             ✍️ Post Event Survey
           </Link>
         </span>
-        <Link
-          href="https://discord.gg/bQNVEmvh4u"
-          target="_blank"
-          rel="noopener"
-        >
+        <Link href="https://discord.gg/bQNVEmvh4u" target="_blank">
           <img
             src="discord.png"
             style={{ width: 18, height: 18, verticalAlign: "text-bottom" }}
           />{" "}
           Time Travelers Discord
         </Link>
-        <Link href="https://x.com/TTPKMN" target="_blank" rel="noopener">
+        <Link href="https://x.com/TTPKMN" target="_blank">
           <img
             src="twitter.png"
             style={{ width: 18, height: 18, verticalAlign: "text-bottom" }}
           />{" "}
           League Twitter
         </Link>
-        <Link href="event_results.html" target="_blank" rel="noopener">
+        <Link href="event_results.html" target="_blank">
           🏆 Past Event Results
         </Link>
       </section>
