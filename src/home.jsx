@@ -37,11 +37,7 @@ function Home() {
           </Link>
         </span>
         <span hidden>
-          <Link
-            href="https://forms.gle/mbcM8xtzFN6HCDUk6"
-            target="_blank"
-            hidden
-          >
+          <Link href="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
             ✍️ Post Event Survey
           </Link>
         </span>
