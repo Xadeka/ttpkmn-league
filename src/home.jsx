@@ -8,39 +8,28 @@ function Home() {
       <Heading1>Time Travelers Pokemon League</Heading1>
       <section className="link-list">
         <Heading2>Quick Links</Heading2>
-        <span hidden>
-          <Link
-            href="https://timetravelersonline.com/pages/pokemon-tcg-pitch-black-pre-release"
-            target="_blank"
-          >
-            📝 Pitch Black Prerelease Registration
-          </Link>
-        </span>
-        <span hidden>
-          <Link href="https://forms.gle/KdDwpGgSWXMvN45R8" target="_blank">
-            🃏 Decklist Submission
-          </Link>
-        </span>
-        <span hidden>
-          <Link href="pairings.html" target="_blank">
-            🔗 Pairings
-          </Link>
-        </span>
-        <span>
-          <Link href="pairings_default.html" rel="noopener">
-            🔗 Pairings
-          </Link>
-        </span>
-        <span hidden>
-          <Link href="standings.html" target="_blank">
-            📊 Standings
-          </Link>
-        </span>
-        <span hidden>
-          <Link href="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
-            ✍️ Post Event Survey
-          </Link>
-        </span>
+        <Link
+          hidden
+          href="https://timetravelersonline.com/pages/pokemon-tcg-pitch-black-pre-release"
+          target="_blank"
+        >
+          📝 Pitch Black Prerelease Registration
+        </Link>
+        <Link hidden href="https://forms.gle/KdDwpGgSWXMvN45R8" target="_blank">
+          🃏 Decklist Submission
+        </Link>
+        <Link hidden href="pairings.html" target="_blank">
+          🔗 Pairings
+        </Link>
+        <Link href="pairings_default.html" rel="noopener">
+          🔗 Pairings
+        </Link>
+        <Link hidden href="standings.html" target="_blank">
+          📊 Standings
+        </Link>
+        <Link hidden href="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
+          ✍️ Post Event Survey
+        </Link>
         <Link href="https://discord.gg/bQNVEmvh4u" target="_blank">
           <img
             src="discord.png"

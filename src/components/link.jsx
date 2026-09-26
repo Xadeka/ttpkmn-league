@@ -1,5 +1,10 @@
 function Link(props) {
-  const { href, children, ...rest } = props;
+  const { href, children, hidden, ...rest } = props;
+
+  if (hidden) {
+    return null;
+  }
+
   return (
     <a href={href} {...rest}>
       {children}
