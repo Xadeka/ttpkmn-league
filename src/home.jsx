@@ -8,14 +8,7 @@ function Home() {
       <Heading1>Time Travelers Pokemon League</Heading1>
       <section className="link-list">
         <Heading2>Quick Links</Heading2>
-        <Link
-          hidden
-          href="https://timetravelersonline.com/pages/pokemon-tcg-pitch-black-pre-release"
-          target="_blank"
-        >
-          📝 Pitch Black Prerelease Registration
-        </Link>
-        <Link hidden href="https://forms.gle/KdDwpGgSWXMvN45R8" target="_blank">
+        <Link hidden href="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
           🃏 Decklist Submission
         </Link>
         <Link hidden href="pairings.html" target="_blank">
