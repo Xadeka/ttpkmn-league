@@ -1,6 +1,6 @@
 /**
  * @see https://prettier.io/docs/configuration
- * @type {import("prettier").Config}
+ * @type {import("prettier").Config & import("prettier-plugin-tailwindcss").PluginOptions}
  */
 const config = {
   printWidth: 80,
@@ -21,6 +21,8 @@ const config = {
   vueIndentScriptAndStyle: false,
   embeddedLanguageFormatting: "auto",
   singleAttributePerLine: false,
+  plugins: ["prettier-plugin-tailwindcss"],
+  tailwindFunctions: ["cn"],
 };
 
 export default config;
