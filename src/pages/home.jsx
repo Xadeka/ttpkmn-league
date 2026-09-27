@@ -1,5 +1,5 @@
-import Link from "./components/link";
-import { Heading1, Heading2, Paragraph } from "./components/typography";
+import Link from "../components/link";
+import { Heading1, Heading2, Paragraph } from "../components/typography";
 import "./home.css";
 
 function Home() {
