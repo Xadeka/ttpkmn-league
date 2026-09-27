@@ -147,14 +147,13 @@ function Home() {
           </tbody>
         </table>
         <hr />
-        <small>
-          <Link
-            to="https://championships.pokemon.com/en-us/about/league-challenges-and-league-cup"
-            target="_blank"
-          >
-            Source
-          </Link>
-        </small>
+        <Link
+          className="text-sm"
+          to="https://championships.pokemon.com/en-us/about/league-challenges-and-league-cup"
+          target="_blank"
+        >
+          Source
+        </Link>
       </Card>
     </div>
   );

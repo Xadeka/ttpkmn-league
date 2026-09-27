@@ -1,10 +1,14 @@
 import { Link as ReactRouterLink } from "react-router";
+import { cn } from "../utils";
 
 function Link(props) {
-  const { children, ...rest } = props;
+  const { className, children, ...rest } = props;
 
   return (
-    <ReactRouterLink className="text-link hover:text-link-hover" {...rest}>
+    <ReactRouterLink
+      className={cn("text-link hover:text-link-hover", className)}
+      {...rest}
+    >
       {children}
     </ReactRouterLink>
   );
