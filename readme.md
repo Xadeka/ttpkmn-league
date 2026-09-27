@@ -29,7 +29,7 @@ It is recommend to [run the app locally](#run-locally) to verify any new changes
 
 ### Page Locations
 
-- Home: [`src/home.jsx`](./src/home.jsx)
+- Home: [`src/pages/home.jsx`](./src/home.jsx)
 - Event Results: [`public/event_results.html`](./public/event_results.html)
 
 ## Development
