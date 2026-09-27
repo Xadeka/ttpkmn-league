@@ -1,0 +1,32 @@
+.pairings-default {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.pairings-default p {
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+}
+
+.pairings-default a {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #58a6ff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.pairings-default a:hover {
+  background: #58a6ff;
+  color: #0d1117;
+}
