@@ -5,7 +5,7 @@ import "./home.css";
 
 function Home() {
   return (
-    <div className="container">
+    <div className="m-auto max-w-150">
       <Heading1>Time Travelers Pokemon League</Heading1>
       <section className="link-list">
         <Heading2>Quick Links</Heading2>
