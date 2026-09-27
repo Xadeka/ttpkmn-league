@@ -10,7 +10,7 @@ function Home() {
       <Heading1>Time Travelers Pokemon League</Heading1>
       <Card>
         <Heading2>Quick Links</Heading2>
-        <ul>
+        <ul className="space-y-1">
           <li hidden>
             <Link to="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
               🃏 Decklist Submission
