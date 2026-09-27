@@ -14,9 +14,7 @@ function Home() {
         <Link hidden to="pairings.html" target="_blank">
           🔗 Pairings
         </Link>
-        <Link to="pairings_default.html" rel="noopener">
-          🔗 Pairings
-        </Link>
+        <Link to="pairings-default">🔗 Pairings</Link>
         <Link hidden to="standings.html" target="_blank">
           📊 Standings
         </Link>
