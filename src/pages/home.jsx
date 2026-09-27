@@ -1,5 +1,6 @@
 import Link from "../components/link";
 import { Heading1, Heading2, Paragraph } from "../components/typography";
+import Card from "../components/card";
 import { Discord, Twitter } from "../components/icons";
 import "./home.css";
 
@@ -7,7 +8,7 @@ function Home() {
   return (
     <div className="m-auto max-w-150">
       <Heading1>Time Travelers Pokemon League</Heading1>
-      <section className="link-list">
+      <Card>
         <Heading2>Quick Links</Heading2>
         <Link hidden to="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
           🃏 Decklist Submission
@@ -31,9 +32,9 @@ function Home() {
         <Link to="event_results.html" target="_blank">
           🏆 Past Event Results
         </Link>
-      </section>
+      </Card>
 
-      <section>
+      <Card>
         <Heading2>Wi-Fi Info</Heading2>
         <Paragraph>
           <strong>Network:</strong> Time Travelers_Guest
@@ -41,9 +42,9 @@ function Home() {
         <Paragraph>
           <strong>Password:</strong> TT_Guest
         </Paragraph>
-      </section>
+      </Card>
 
-      <section>
+      <Card>
         <Heading2>Upcoming Events</Heading2>
         <Paragraph>
           <strong>September 5:</strong> League 11:30 AM
@@ -60,9 +61,9 @@ function Home() {
         <Paragraph>
           <strong>September 26:</strong> League Challenge 12:00 PM
         </Paragraph>
-      </section>
+      </Card>
 
-      <section>
+      <Card>
         <Heading2>September League Challenge</Heading2>
         <Paragraph>
           <strong>Location:</strong> 3116 12 Mile Road, Berkley, MI 48072
@@ -82,9 +83,9 @@ function Home() {
         <Paragraph>
           <strong>Staff:</strong> Hunter Potter
         </Paragraph>
-      </section>
+      </Card>
 
-      <section>
+      <Card>
         <Heading2>Championship Points Table (League Challenge)</Heading2>
         <table
           style={{ "border-collapse": "collapse", width: "100%", border: 0 }}
@@ -149,7 +150,7 @@ function Home() {
             Source
           </Link>
         </small>
-      </section>
+      </Card>
     </div>
   );
 }
