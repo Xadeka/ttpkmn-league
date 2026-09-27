@@ -1,6 +1,7 @@
 import Link from "../components/link";
 import { Heading1, Heading2, Paragraph } from "../components/typography";
 import Card from "../components/card";
+import ChampionshipPointsTable from "../components/championship-points-table";
 import { Discord, Twitter } from "../components/icons";
 import { eventTypeToName } from "../utils";
 
@@ -95,56 +96,7 @@ function Home() {
       </Card>
 
       <Card>
-        <Heading2>Championship Points Table (League Challenge)</Heading2>
-        <table className="w-full">
-          <thead className="[&_th]:p-1 [&_th]:text-start [&_th]:font-bold">
-            <tr>
-              <th>Placement</th>
-              <th>Kicker (# of players)</th>
-              <th>Points</th>
-            </tr>
-          </thead>
-          <tbody className="[&_td]:p-1">
-            <tr>
-              <td>1</td>
-              <td>0</td>
-              <td>15</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>4</td>
-              <td>12</td>
-            </tr>
-            <tr>
-              <td>3–4</td>
-              <td>8</td>
-              <td>10</td>
-            </tr>
-            <tr>
-              <td>5–8</td>
-              <td>14</td>
-              <td>8</td>
-            </tr>
-            <tr>
-              <td>9–16</td>
-              <td>25</td>
-              <td>6</td>
-            </tr>
-            <tr>
-              <td>17–32</td>
-              <td>48</td>
-              <td>4</td>
-            </tr>
-          </tbody>
-        </table>
-        <hr />
-        <Link
-          className="text-sm"
-          to="https://championships.pokemon.com/en-us/about/league-challenges-and-league-cup"
-          target="_blank"
-        >
-          Source
-        </Link>
+        <ChampionshipPointsCardContent type="challenge" />
       </Card>
     </div>
   );
@@ -164,6 +116,24 @@ function ScheduledEventText(props) {
       <span className="font-bold">{monthDay}:</span>{" "}
       {eventTypeToName(props.type)} {time}
     </Paragraph>
+  );
+}
+
+function ChampionshipPointsCardContent(props) {
+  const eventName = eventTypeToName(props.type);
+  return (
+    <>
+      <Heading2>Championship Points Table ({eventName})</Heading2>
+      <ChampionshipPointsTable type={props.type} />
+      <hr />
+      <Link
+        className="text-sm"
+        to="https://championships.pokemon.com/en-us/about/league-challenges-and-league-cup"
+        target="_blank"
+      >
+        Source
+      </Link>
+    </>
   );
 }
 
