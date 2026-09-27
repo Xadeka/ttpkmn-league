@@ -2,6 +2,7 @@ import Link from "../components/link";
 import { Heading1, Heading2, Paragraph } from "../components/typography";
 import Card from "../components/card";
 import { Discord, Twitter } from "../components/icons";
+import { eventTypeToName } from "../utils";
 
 function Home() {
   return (
@@ -63,23 +64,11 @@ function Home() {
 
       <Card>
         <Heading2>Upcoming Events</Heading2>
-        <Paragraph>
-          <span className="font-bold">September 5:</span> League 11:30 AM
-        </Paragraph>
-        <Paragraph>
-          <span className="font-bold">September 12:</span> League 11:30 AM
-        </Paragraph>
-        <Paragraph>
-          <span className="font-bold">September 12:</span> Gym Leader Challenge
-          2:00 PM
-        </Paragraph>
-        <Paragraph>
-          <span className="font-bold">September 19:</span> League 11:30 AM
-        </Paragraph>
-        <Paragraph>
-          <span className="font-bold">September 26:</span> League Challenge
-          12:00 PM
-        </Paragraph>
+        <ScheduledEventText datetime="2026-09-05T15:30Z" type="league" />
+        <ScheduledEventText datetime="2026-09-12T15:30Z" type="league" />
+        <ScheduledEventText datetime="2026-09-12T18:00Z" type="glc" />
+        <ScheduledEventText datetime="2026-09-19T15:30Z" type="league" />
+        <ScheduledEventText datetime="2026-09-26T16:00Z" type="challenge" />
       </Card>
 
       <Card>
@@ -158,6 +147,23 @@ function Home() {
         </Link>
       </Card>
     </div>
+  );
+}
+
+function ScheduledEventText(props) {
+  const datetime = new Date(props.datetime);
+  const monthDay = datetime.toLocaleString("default", {
+    month: "long",
+    day: "2-digit",
+  });
+  const time = datetime.toLocaleString("default", {
+    timeStyle: "short",
+  });
+  return (
+    <Paragraph>
+      <span className="font-bold">{monthDay}:</span>{" "}
+      {eventTypeToName(props.type)} {time}
+    </Paragraph>
   );
 }
 
