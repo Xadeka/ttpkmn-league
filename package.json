@@ -8,8 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format-check": "prettier ./**/*.{js,json,md} --check",
-    "format-fix": "prettier ./**/*.{js,json,md} --write"
+    "format-check": "prettier ./**/*.{js,jsx,json,md} --check",
+    "format-fix": "prettier ./**/*.{js,jsx,json,md} --write"
   },
   "dependencies": {
     "prettier": "^3.9.9",
