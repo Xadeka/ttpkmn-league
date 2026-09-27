@@ -32,7 +32,7 @@ function ChampionshipPointsTable(props) {
       <tbody className="[&_td]:p-1">
         {data.map((row) => {
           return (
-            <tr>
+            <tr key={row.placement}>
               <td>{row.placement}</td>
               <td>{row.kicker}</td>
               <td>{row.points}</td>
