@@ -1,5 +1,6 @@
 import Link from "../components/link";
 import { Heading1, Heading2, Paragraph } from "../components/typography";
+import { Discord, Twitter } from "../components/icons";
 import "./home.css";
 
 function Home() {
@@ -22,18 +23,10 @@ function Home() {
           ✍️ Post Event Survey
         </Link>
         <Link to="https://discord.gg/bQNVEmvh4u" target="_blank">
-          <img
-            src="discord.png"
-            style={{ width: 18, height: 18, verticalAlign: "text-bottom" }}
-          />{" "}
-          Time Travelers Discord
+          <Discord /> Time Travelers Discord
         </Link>
         <Link to="https://x.com/TTPKMN" target="_blank">
-          <img
-            src="twitter.png"
-            style={{ width: 18, height: 18, verticalAlign: "text-bottom" }}
-          />{" "}
-          League Twitter
+          <Twitter /> League Twitter
         </Link>
         <Link to="event_results.html" target="_blank">
           🏆 Past Event Results
