@@ -105,28 +105,15 @@ function Home() {
 
       <Card>
         <Heading2>Championship Points Table (League Challenge)</Heading2>
-        <table
-          style={{ "border-collapse": "collapse", width: "100%", border: 0 }}
-        >
-          <colgroup>
-            <col style={{ width: "33.3328%" }} />
-            <col style={{ width: "33.3328%" }} />
-            <col style={{ width: "33.3328%" }} />
-          </colgroup>
-          <thead>
+        <table className="w-full">
+          <thead className="[&_th]:p-2.5 [&_th]:text-start [&_th]:font-bold">
             <tr>
-              <th>
-                <strong>Placement</strong>
-              </th>
-              <th>
-                <strong>Kicker (# of players)</strong>
-              </th>
-              <th>
-                <strong>Points</strong>
-              </th>
+              <th>Placement</th>
+              <th>Kicker (# of players)</th>
+              <th>Points</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="[&_td]:p-2.5">
             <tr>
               <td>1</td>
               <td>0</td>

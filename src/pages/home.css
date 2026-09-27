@@ -2,15 +2,6 @@
   margin-bottom: 1rem;
 }
 
-td,
-th {
-  padding: 10px;
-}
-
-th {
-  text-align: start;
-}
-
 /* Small screens */
 @media (max-width: 420px) {
   body {
