@@ -109,14 +109,14 @@ function Home() {
       <Card>
         <Heading2>Championship Points Table (League Challenge)</Heading2>
         <table className="w-full">
-          <thead className="[&_th]:p-2.5 [&_th]:text-start [&_th]:font-bold">
+          <thead className="[&_th]:p-1 [&_th]:text-start [&_th]:font-bold">
             <tr>
               <th>Placement</th>
               <th>Kicker (# of players)</th>
               <th>Points</th>
             </tr>
           </thead>
-          <tbody className="[&_td]:p-2.5">
+          <tbody className="[&_td]:p-1">
             <tr>
               <td>1</td>
               <td>0</td>
