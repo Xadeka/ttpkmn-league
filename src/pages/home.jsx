@@ -2,7 +2,6 @@ import Link from "../components/link";
 import { Heading1, Heading2, Paragraph } from "../components/typography";
 import Card from "../components/card";
 import { Discord, Twitter } from "../components/icons";
-import "./home.css";
 
 function Home() {
   return (
