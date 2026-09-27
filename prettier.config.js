@@ -22,6 +22,7 @@ const config = {
   embeddedLanguageFormatting: "auto",
   singleAttributePerLine: false,
   plugins: ["prettier-plugin-tailwindcss"],
+  tailwindFunctions: ["cn"],
 };
 
 export default config;
