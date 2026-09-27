@@ -55,51 +55,54 @@ function Home() {
       <Card>
         <Heading2>Wi-Fi Info</Heading2>
         <Paragraph>
-          <strong>Network:</strong> Time Travelers_Guest
+          <span className="font-bold">Network:</span> Time Travelers_Guest
         </Paragraph>
         <Paragraph>
-          <strong>Password:</strong> TT_Guest
+          <span className="font-bold">Password:</span> TT_Guest
         </Paragraph>
       </Card>
 
       <Card>
         <Heading2>Upcoming Events</Heading2>
         <Paragraph>
-          <strong>September 5:</strong> League 11:30 AM
+          <span className="font-bold">September 5:</span> League 11:30 AM
         </Paragraph>
         <Paragraph>
-          <strong>September 12:</strong> League 11:30 AM
+          <span className="font-bold">September 12:</span> League 11:30 AM
         </Paragraph>
         <Paragraph>
-          <strong>September 12:</strong> Gym Leader Challenge 2:00 PM
+          <span className="font-bold">September 12:</span> Gym Leader Challenge
+          2:00 PM
         </Paragraph>
         <Paragraph>
-          <strong>September 19:</strong> League 11:30 AM
+          <span className="font-bold">September 19:</span> League 11:30 AM
         </Paragraph>
         <Paragraph>
-          <strong>September 26:</strong> League Challenge 12:00 PM
+          <span className="font-bold">September 26:</span> League Challenge
+          12:00 PM
         </Paragraph>
       </Card>
 
       <Card>
         <Heading2>September League Challenge</Heading2>
         <Paragraph>
-          <strong>Location:</strong> 3116 12 Mile Road, Berkley, MI 48072
+          <span className="font-bold">Location:</span> 3116 12 Mile Road,
+          Berkley, MI 48072
         </Paragraph>
         <Paragraph>
-          <strong>Date:</strong> September 26, 2026
+          <span className="font-bold">Date:</span> September 26, 2026
         </Paragraph>
         <Paragraph>
-          <strong>Time:</strong> Round 1 starts at 12:05 PM. Store opens at
-          11:00 AM. If you do not have your decklist submitted by noon, you will
-          receive a loss for round 1.
+          <span className="font-bold">Time:</span> Round 1 starts at 12:05 PM.
+          Store opens at 11:00 AM. If you do not have your decklist submitted by
+          noon, you will receive a loss for round 1.
         </Paragraph>
         <Paragraph>
-          <strong>Rounds:</strong> X Swiss rounds&mdash;best of one&mdash;30
-          minutes + 3 turns
+          <span className="font-bold">Rounds:</span> X Swiss rounds&mdash;best
+          of one&mdash;30 minutes + 3 turns
         </Paragraph>
         <Paragraph>
-          <strong>Staff:</strong> Hunter Potter
+          <span className="font-bold">Staff:</span> Hunter Potter
         </Paragraph>
       </Card>
 
