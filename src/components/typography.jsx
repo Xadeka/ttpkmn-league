@@ -1,3 +1,5 @@
+import { cn } from "../utils";
+
 export function Heading1(props) {
   return (
     <h1 className="text-accent m-0 mb-4 text-center text-3xl font-bold">
@@ -7,9 +9,14 @@ export function Heading1(props) {
 }
 
 export function Heading2(props) {
-  return <h2 className="m-0 mb-2 text-xl font-bold">{props.children}</h2>;
+  return <h2 className="m-0 mb-3 text-xl font-bold">{props.children}</h2>;
 }
 
 export function Paragraph(props) {
-  return <p className="mb-1 last:mb-0">{props.children}</p>;
+  const { className, children, ...restProps } = props;
+  return (
+    <p className={cn("mb-2 last:mb-0", className)} {...restProps}>
+      {children}
+    </p>
+  );
 }
