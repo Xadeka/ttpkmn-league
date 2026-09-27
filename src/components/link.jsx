@@ -1,11 +1,7 @@
 import { Link as ReactRouterLink } from "react-router";
 
 function Link(props) {
-  const { children, hidden, ...rest } = props;
-
-  if (hidden) {
-    return null;
-  }
+  const { children, ...rest } = props;
 
   return <ReactRouterLink {...rest}>{children}</ReactRouterLink>;
 }

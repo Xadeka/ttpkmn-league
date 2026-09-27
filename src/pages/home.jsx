@@ -10,28 +10,46 @@ function Home() {
       <Heading1>Time Travelers Pokemon League</Heading1>
       <Card>
         <Heading2>Quick Links</Heading2>
-        <Link hidden to="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
-          🃏 Decklist Submission
-        </Link>
-        <Link hidden to="pairings.html" target="_blank">
-          🔗 Pairings
-        </Link>
-        <Link to="pairings-default">🔗 Pairings</Link>
-        <Link hidden to="standings.html" target="_blank">
-          📊 Standings
-        </Link>
-        <Link hidden to="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
-          ✍️ Post Event Survey
-        </Link>
-        <Link to="https://discord.gg/bQNVEmvh4u" target="_blank">
-          <Discord /> Time Travelers Discord
-        </Link>
-        <Link to="https://x.com/TTPKMN" target="_blank">
-          <Twitter /> League Twitter
-        </Link>
-        <Link to="event_results.html" target="_blank">
-          🏆 Past Event Results
-        </Link>
+        <ul>
+          <li hidden>
+            <Link to="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
+              🃏 Decklist Submission
+            </Link>
+          </li>
+          <li hidden>
+            <Link to="pairings.html" target="_blank">
+              🔗 Pairings
+            </Link>
+          </li>
+          <li>
+            <Link to="pairings-default">🔗 Pairings</Link>
+          </li>
+          <li hidden>
+            <Link to="standings.html" target="_blank">
+              📊 Standings
+            </Link>
+          </li>
+          <li hidden>
+            <Link to="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
+              ✍️ Post Event Survey
+            </Link>
+          </li>
+          <li>
+            <Link to="https://discord.gg/bQNVEmvh4u" target="_blank">
+              <Discord /> Time Travelers Discord
+            </Link>
+          </li>
+          <li>
+            <Link to="https://x.com/TTPKMN" target="_blank">
+              <Twitter /> League Twitter
+            </Link>
+          </li>
+          <li>
+            <Link to="event_results.html" target="_blank">
+              🏆 Past Event Results
+            </Link>
+          </li>
+        </ul>
       </Card>
 
       <Card>
