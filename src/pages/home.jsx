@@ -8,36 +8,36 @@ function Home() {
       <Heading1>Time Travelers Pokemon League</Heading1>
       <section className="link-list">
         <Heading2>Quick Links</Heading2>
-        <Link hidden href="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
+        <Link hidden to="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
           🃏 Decklist Submission
         </Link>
-        <Link hidden href="pairings.html" target="_blank">
+        <Link hidden to="pairings.html" target="_blank">
           🔗 Pairings
         </Link>
-        <Link href="pairings_default.html" rel="noopener">
+        <Link to="pairings_default.html" rel="noopener">
           🔗 Pairings
         </Link>
-        <Link hidden href="standings.html" target="_blank">
+        <Link hidden to="standings.html" target="_blank">
           📊 Standings
         </Link>
-        <Link hidden href="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
+        <Link hidden to="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
           ✍️ Post Event Survey
         </Link>
-        <Link href="https://discord.gg/bQNVEmvh4u" target="_blank">
+        <Link to="https://discord.gg/bQNVEmvh4u" target="_blank">
           <img
             src="discord.png"
             style={{ width: 18, height: 18, verticalAlign: "text-bottom" }}
           />{" "}
           Time Travelers Discord
         </Link>
-        <Link href="https://x.com/TTPKMN" target="_blank">
+        <Link to="https://x.com/TTPKMN" target="_blank">
           <img
             src="twitter.png"
             style={{ width: 18, height: 18, verticalAlign: "text-bottom" }}
           />{" "}
           League Twitter
         </Link>
-        <Link href="event_results.html" target="_blank">
+        <Link to="event_results.html" target="_blank">
           🏆 Past Event Results
         </Link>
       </section>
@@ -152,7 +152,7 @@ function Home() {
         <hr />
         <small>
           <Link
-            href="https://championships.pokemon.com/en-us/about/league-challenges-and-league-cup"
+            to="https://championships.pokemon.com/en-us/about/league-challenges-and-league-cup"
             target="_blank"
           >
             Source

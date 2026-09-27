@@ -1,15 +1,13 @@
+import { Link as ReactRouterLink } from "react-router";
+
 function Link(props) {
-  const { href, children, hidden, ...rest } = props;
+  const { children, hidden, ...rest } = props;
 
   if (hidden) {
     return null;
   }
 
-  return (
-    <a href={href} {...rest}>
-      {children}
-    </a>
-  );
+  return <ReactRouterLink {...rest}>{children}</ReactRouterLink>;
 }
 
 export default Link;
