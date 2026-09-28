@@ -65,21 +65,25 @@ function Home() {
 
       <Card>
         <Heading2>Upcoming Events</Heading2>
-        <ScheduledEventText datetime="2026-09-05T15:30Z" type="league" />
-        <ScheduledEventText datetime="2026-09-12T15:30Z" type="league" />
-        <ScheduledEventText datetime="2026-09-12T18:00Z" type="glc" />
-        <ScheduledEventText datetime="2026-09-19T15:30Z" type="league" />
-        <ScheduledEventText datetime="2026-09-26T16:00Z" type="challenge" />
+        <ScheduledEventText datetime="2026-10-03T15:30Z" type="league" />
+        <Paragraph>
+          <strong>No League October 10</strong>
+        </Paragraph>
+        <ScheduledEventText datetime="2026-10-17T16:00Z" type="challenge" />
+        <ScheduledEventText datetime="2026-10-24T16:00Z" type="Delta Reign Prerelease" />
+        <ScheduledEventText datetime="2026-10-25T16:30Z" type="Delta Reign Prerelease" />
+        <ScheduledEventText datetime="2026-10-31T16:00Z" type="League (Pokeween!)" />
+        <ScheduledEventText datetime="2026-11-01T16:30Z" type="Delta Reign Prerelease" /> 
       </Card>
 
       <Card>
-        <Heading2>September League Challenge</Heading2>
+        <Heading2>October League Challenge</Heading2>
         <Paragraph>
           <span className="font-bold">Location:</span> 3116 12 Mile Road,
           Berkley, MI 48072
         </Paragraph>
         <Paragraph>
-          <span className="font-bold">Date:</span> September 26, 2026
+          <span className="font-bold">Date:</span> October 17, 2026
         </Paragraph>
         <Paragraph>
           <span className="font-bold">Time:</span> Round 1 starts at 12:05 PM.
@@ -91,7 +95,7 @@ function Home() {
           of one&mdash;30 minutes + 3 turns
         </Paragraph>
         <Paragraph>
-          <span className="font-bold">Staff:</span> Hunter Potter
+          <span className="font-bold">Staff:</span> Conor Devins
         </Paragraph>
       </Card>
 
@@ -106,7 +110,7 @@ function ScheduledEventText(props) {
   const datetime = new Date(props.datetime);
   const monthDay = datetime.toLocaleString("default", {
     month: "long",
-    day: "2-digit",
+    day: "numeric",
   });
   const time = datetime.toLocaleString("default", {
     timeStyle: "short",
