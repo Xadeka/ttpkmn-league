@@ -73,7 +73,7 @@ function Home() {
         <ScheduledEventText datetime="2026-10-24T16:00Z" type="Delta Reign Prerelease" />
         <ScheduledEventText datetime="2026-10-25T16:30Z" type="Delta Reign Prerelease" />
         <ScheduledEventText datetime="2026-10-31T15:30Z" type="League (Pokeween!)" />
-        <ScheduledEventText datetime="2026-11-01T16:30Z" type="Delta Reign Prerelease" /> 
+        <ScheduledEventText datetime="2026-11-01T17:30Z" type="Delta Reign Prerelease" /> 
       </Card>
 
       <Card>
