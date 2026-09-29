@@ -67,7 +67,7 @@ function Home() {
         <Heading2>Upcoming Events</Heading2>
         <ScheduledEventText datetime="2026-10-03 11:30" type="league" />
         <Paragraph>
-          <strong>No League October 10</strong>
+          <span className="font-bold">No League October 10</span>
         </Paragraph>
         <ScheduledEventText datetime="2026-10-17 12:00" type="challenge" />
         <ScheduledEventText
