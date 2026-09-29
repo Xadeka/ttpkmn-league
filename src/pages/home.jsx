@@ -65,15 +65,27 @@ function Home() {
 
       <Card>
         <Heading2>Upcoming Events</Heading2>
-        <ScheduledEventText datetime="2026-10-03T11:30Z" type="league" />
+        <ScheduledEventText datetime="2026-10-03 11:30" type="league" />
         <Paragraph>
           <strong>No League October 10</strong>
         </Paragraph>
-        <ScheduledEventText datetime="2026-10-17T12:00Z" type="challenge" />
-        <ScheduledEventText datetime="2026-10-24T12:00Z" type="Delta Reign Prerelease" />
-        <ScheduledEventText datetime="2026-10-25T12:30Z" type="Delta Reign Prerelease" />
-        <ScheduledEventText datetime="2026-10-31T11:30Z" type="League (Pokeween!)" />
-        <ScheduledEventText datetime="2026-11-01T12:30Z" type="Delta Reign Prerelease" /> 
+        <ScheduledEventText datetime="2026-10-17 12:00" type="challenge" />
+        <ScheduledEventText
+          datetime="2026-10-24 12:00"
+          type="Delta Reign Prerelease"
+        />
+        <ScheduledEventText
+          datetime="2026-10-25 12:30"
+          type="Delta Reign Prerelease"
+        />
+        <ScheduledEventText
+          datetime="2026-10-31 11:30"
+          type="League (Pokeween!)"
+        />
+        <ScheduledEventText
+          datetime="2026-11-01 12:30"
+          type="Delta Reign Prerelease"
+        />
       </Card>
 
       <Card>
@@ -114,7 +126,6 @@ function ScheduledEventText(props) {
   });
   const time = datetime.toLocaleString("default", {
     timeStyle: "short",
-    timeZone: "UTC",
   });
   return (
     <Paragraph>
