@@ -9,7 +9,11 @@ export function Heading1(props) {
 }
 
 export function Heading2(props) {
-  return <h2 className="m-0 mb-3 text-xl font-bold">{props.children}</h2>;
+  return (
+    <h2 className={cn("m-0 mb-3 text-xl font-bold", props.className)}>
+      {props.children}
+    </h2>
+  );
 }
 
 export function Paragraph(props) {
