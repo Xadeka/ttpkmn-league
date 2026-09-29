@@ -46,9 +46,7 @@ function Home() {
             </Link>
           </li>
           <li>
-            <Link to="event_results.html" target="_blank">
-              🏆 Past Event Results
-            </Link>
+            <Link to="event-results">🏆 Past Event Results</Link>
           </li>
         </ul>
       </Card>
