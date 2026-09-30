@@ -5,21 +5,11 @@ import Card from "../components/card";
 function EventResults() {
   return (
     <>
-      <div className="mb-4 flex">
-        <Link
-          className="hover:bg-link-hover hover:text-bg hover:outline-link-hover rounded-md px-3 py-1 outline transition-colors duration-150"
-          to="/"
-        >
-          ← Back
-        </Link>
-      </div>
-      <div className="m-auto max-w-2xl">
-        <Heading2 className="text-center">Past Tournament Results</Heading2>
-        <ResultCard name="League Challenge" datetime="2026-09-26 00:00" />
-        <ResultCard name="League Challenge" datetime="2026-09-26 00:00" />
-        <ResultCard name="League Challenge" datetime="2026-09-26 00:00" />
-        <ResultCard name="League Challenge" datetime="2026-09-26 00:00" />
-      </div>
+      <Heading2 className="text-center">Past Tournament Results</Heading2>
+      <ResultCard name="League Challenge" datetime="2026-09-26 00:00" />
+      <ResultCard name="League Challenge" datetime="2026-09-26 00:00" />
+      <ResultCard name="League Challenge" datetime="2026-09-26 00:00" />
+      <ResultCard name="League Challenge" datetime="2026-09-26 00:00" />
     </>
   );
 }
