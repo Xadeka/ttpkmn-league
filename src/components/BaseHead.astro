@@ -1,8 +1,14 @@
 ---
 import "../main.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+
+interface Props {
+  title?: string;
+}
+
+const props = Astro.props;
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Time Travelers Pokemon League</title>
+<title>{props.title ?? "Time Travelers Pokemon League"}</title>

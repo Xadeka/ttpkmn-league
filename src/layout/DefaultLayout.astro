@@ -1,12 +1,18 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+
+interface Props {
+  title?: string;
+  class?: string;
+}
+
 const props = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead />
+    <BaseHead title={props.title} />
   </head>
   <body class:list={["p-4 bg-bg text-text", props.class]}>
     <slot />
