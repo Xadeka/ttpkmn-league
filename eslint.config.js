@@ -1,6 +1,5 @@
 import eslintJs from "@eslint/js";
 import eslintReact from "@eslint-react/eslint-plugin";
-import { reactRefresh } from "eslint-plugin-react-refresh";
 import eslintConfigPrettier from "eslint-config-prettier";
 import globals from "globals";
 import { defineConfig, globalIgnores } from "eslint/config";
@@ -16,5 +15,4 @@ export default defineConfig([
     },
   },
   eslintConfigPrettier,
-  reactRefresh.configs.vite(),
 ]);

@@ -21,7 +21,7 @@ const config = {
   vueIndentScriptAndStyle: false,
   embeddedLanguageFormatting: "auto",
   singleAttributePerLine: false,
-  plugins: ["prettier-plugin-tailwindcss"],
+  plugins: ["prettier-plugin-tailwindcss", "prettier-plugin-astro"],
   tailwindFunctions: ["cn"],
 };
 
