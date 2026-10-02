@@ -1,8 +1,6 @@
 ---
 import { eventTypeToName } from "../utils";
 import Card from "./Card.astro";
-import Link from "./Link.astro";
-import { Heading2 } from "./typography";
 
 const EVENT_CHAMPIONSHIP_POINTS_DATA = {
   challenge: [
@@ -33,7 +31,7 @@ const data = EVENT_CHAMPIONSHIP_POINTS_DATA[props.type];
 ---
 
 <Card>
-  <Heading2>Championship Points Table ({eventTypeToName(props.type)})</Heading2>
+  <h2>Championship Points Table ({eventTypeToName(props.type)})</h2>
   <table class="w-full">
     <thead class="[&_th]:p-1 [&_th]:text-start [&_th]:font-bold">
       <tr>
@@ -55,11 +53,11 @@ const data = EVENT_CHAMPIONSHIP_POINTS_DATA[props.type];
     </tbody>
   </table>
   <hr />
-  <Link
+  <a
     class="text-sm"
     href="https://championships.pokemon.com/en-us/about/league-challenges-and-league-cup"
     target="_blank"
   >
     Source
-  </Link>
+  </a>
 </Card>

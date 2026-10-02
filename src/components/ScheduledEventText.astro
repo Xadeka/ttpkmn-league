@@ -1,5 +1,4 @@
 ---
-import { Paragraph } from "./typography";
 import { eventTypeToName } from "../utils";
 
 const props = Astro.props;
@@ -13,7 +12,7 @@ const time = datetime.toLocaleString("default", {
 });
 ---
 
-<Paragraph>
+<p>
   <span class="font-bold">{monthDay}:</span> {eventTypeToName(props.type)}{" "}
   {time}
-</Paragraph>
+</p>

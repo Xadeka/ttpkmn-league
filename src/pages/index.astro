@@ -1,8 +1,7 @@
 ---
 import DefaultLayout from "../layout/DefaultLayout.astro";
 import Card from "../components/Card.astro";
-import Link from "../components/Link.astro";
-import { Heading1, Heading2, Paragraph } from "../components/typography";
+
 import { Discord, Twitter } from "../components/icons";
 import ScheduledEventText from "../components/ScheduledEventText.astro";
 import ChampionshipPointsCard from "../components/ChampionshipPointsCard.astro";
@@ -10,67 +9,67 @@ import ChampionshipPointsCard from "../components/ChampionshipPointsCard.astro";
 
 <DefaultLayout>
   <div class="m-auto max-w-150">
-    <Heading1>Time Travelers Pokemon League</Heading1>
+    <h1>Time Travelers Pokemon League</h1>
     <Card>
-      <Heading2>Quick Links</Heading2>
+      <h2>Quick Links</h2>
       <ul class="space-y-1">
         <li hidden>
-          <Link href="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
+          <a href="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
             🃏 Decklist Submission
-          </Link>
+          </a>
         </li>
         <li hidden>
-          <Link href="pairings.html" target="_blank">
+          <a href="pairings.html" target="_blank">
             🔗 Pairings
-          </Link>
+          </a>
         </li>
         <li>
-          <Link href="pairings-default">🔗 Pairings</Link>
+          <a href="pairings-default">🔗 Pairings</a>
         </li>
         <li hidden>
-          <Link href="standings.html" target="_blank">
+          <a href="standings.html" target="_blank">
             📊 Standings
-          </Link>
+          </a>
         </li>
         <li hidden>
-          <Link href="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
+          <a href="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
             ✍️ Post Event Survey
-          </Link>
+          </a>
         </li>
         <li>
-          <Link href="https://discord.gg/bQNVEmvh4u" target="_blank">
+          <a href="https://discord.gg/bQNVEmvh4u" target="_blank">
             <Discord /> Time Travelers Discord
-          </Link>
+          </a>
         </li>
         <li>
-          <Link href="https://x.com/TTPKMN" target="_blank">
+          <a href="https://x.com/TTPKMN" target="_blank">
             <Twitter /> League Twitter
-          </Link>
+          </a>
         </li>
         <li>
-          <Link href="event_results.html" target="_blank">
+          <a href="event_results.html" target="_blank">
             🏆 Past Event Results
-          </Link>
+          </a>
         </li>
       </ul>
     </Card>
 
     <Card>
-      <Heading2>Wi-Fi Info</Heading2>
-      <Paragraph>
+      <h2>Wi-Fi Info</h2>
+      <p>
         <span class="font-bold">Network:</span> Time Travelers_Guest
-      </Paragraph>
-      <Paragraph>
+      </p>
+      <p>
         <span class="font-bold">Password:</span> TT_Guest
-      </Paragraph>
+      </p>
     </Card>
 
     <Card>
-      <Heading2>Upcoming Events</Heading2>
+      <h2>Upcoming Events</h2>
       <ScheduledEventText datetime="2026-10-03 11:30" type="league" />
-      <Paragraph>
+      <p>
         <span class="font-bold">No League October 10</span>
-      </Paragraph>
+      </p>
       <ScheduledEventText datetime="2026-10-17 12:00" type="challenge" />
       <ScheduledEventText
         datetime="2026-10-24 12:00"
@@ -91,26 +90,26 @@ import ChampionshipPointsCard from "../components/ChampionshipPointsCard.astro";
     </Card>
 
     <Card>
-      <Heading2>October League Challenge</Heading2>
-      <Paragraph>
+      <h2>October League Challenge</h2>
+      <p>
         <span class="font-bold">Location:</span> 3116 12 Mile Road, Berkley, MI
         48072
-      </Paragraph>
-      <Paragraph>
+      </p>
+      <p>
         <span class="font-bold">Date:</span> October 17, 2026
-      </Paragraph>
-      <Paragraph>
+      </p>
+      <p>
         <span class="font-bold">Time:</span> Round 1 starts at 12:05 PM. Store
         opens at 11:00 AM. If you do not have your decklist submitted by noon,
         you will receive a loss for round 1.
-      </Paragraph>
-      <Paragraph>
+      </p>
+      <p>
         <span class="font-bold">Rounds:</span> X Swiss rounds&mdash;best of
         one&mdash;30 minutes + 3 turns
-      </Paragraph>
-      <Paragraph>
+      </p>
+      <p>
         <span class="font-bold">Staff:</span> Conor Devins
-      </Paragraph>
+      </p>
     </Card>
 
     <ChampionshipPointsCard type="challenge" />

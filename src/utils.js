@@ -1,10 +1,3 @@
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...classNames) {
-  return twMerge(clsx(classNames));
-}
-
 export function eventTypeToName(eventType) {
   switch (eventType) {
     case "league":
