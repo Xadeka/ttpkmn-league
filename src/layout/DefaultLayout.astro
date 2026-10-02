@@ -1,0 +1,14 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead />
+  </head>
+  <body class:list={["p-4 bg-bg text-text", props.class]}>
+    <slot />
+  </body>
+</html>

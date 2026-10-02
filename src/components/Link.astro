@@ -1,0 +1,8 @@
+---
+import { cn } from "../utils";
+const { className, children, ...rest } = Astro.props;
+---
+
+<a class={cn("text-link hover:text-link-hover", className)} {...rest}>
+  <slot />
+</a>
