@@ -8,8 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",
-    "format-check": "prettier ./**/*.{js,jsx,json,md,astro} --check",
-    "format-fix": "prettier ./**/*.{js,jsx,json,md,astro} --write"
+    "format-check": "prettier ./**/*.{js,json,md,astro} --check",
+    "format-fix": "prettier ./**/*.{js,json,md,astro} --write"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
