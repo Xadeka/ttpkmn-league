@@ -7,9 +7,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint .",
-    "format-check": "prettier ./**/*.{js,json,md,astro} --check",
-    "format-fix": "prettier ./**/*.{js,json,md,astro} --write"
+    "lint:eslint": "eslint .",
+    "lint:eslint:fix": "eslint . --fix",
+    "lint:astro": "astro check",
+    "lint:prettier": "prettier ./**/*.{js,json,md,astro} --check",
+    "lint:prettier:fix": "prettier ./**/*.{js,json,md,astro} --write"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
