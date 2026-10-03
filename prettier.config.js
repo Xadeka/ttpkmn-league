@@ -22,6 +22,7 @@ const config = {
   embeddedLanguageFormatting: "auto",
   singleAttributePerLine: false,
   plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  overrides: [{ files: "*.astro", options: { parser: "astro" } }],
   tailwindFunctions: ["cn"],
 };
 
