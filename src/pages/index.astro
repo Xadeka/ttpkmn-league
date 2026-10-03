@@ -1,10 +1,10 @@
 ---
 import DefaultLayout from "../layout/DefaultLayout.astro";
 import Card from "../components/Card.astro";
-
-import { Discord, Twitter } from "../components/icons";
 import ScheduledEventText from "../components/ScheduledEventText.astro";
 import ChampionshipPointsCard from "../components/ChampionshipPointsCard.astro";
+import FaIcon from "../components/FaIcon.astro";
+import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 ---
 
 <DefaultLayout>
@@ -38,12 +38,13 @@ import ChampionshipPointsCard from "../components/ChampionshipPointsCard.astro";
         </li>
         <li>
           <a href="https://discord.gg/bQNVEmvh4u" target="_blank">
-            <Discord /> Time Travelers Discord
+            <FaIcon icon={faDiscord} class="text-discord" /> Time Travelers
+            Discord
           </a>
         </li>
         <li>
           <a href="https://x.com/TTPKMN" target="_blank">
-            <Twitter /> League Twitter
+            <FaIcon icon={faTwitter} class="text-twitter" /> League Twitter
           </a>
         </li>
         <li>
