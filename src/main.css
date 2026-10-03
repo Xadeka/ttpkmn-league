@@ -14,18 +14,20 @@
   --color-twitter: #1da1f2;
 }
 
-h1 {
-  @apply text-accent m-0 mb-4 text-center text-3xl font-bold;
-}
+@layer base {
+  h1 {
+    @apply text-accent m-0 mb-4 text-center text-3xl font-bold;
+  }
 
-h2 {
-  @apply m-0 mb-3 text-xl font-bold;
-}
+  h2 {
+    @apply m-0 mb-3 text-xl font-bold;
+  }
 
-p {
-  @apply mb-2 last:mb-0;
-}
+  p {
+    @apply mb-2 last:mb-0;
+  }
 
-a {
-  @apply text-link hover:text-link-hover;
+  a {
+    @apply text-link hover:text-link-hover;
+  }
 }
