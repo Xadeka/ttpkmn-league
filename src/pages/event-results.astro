@@ -3,6 +3,8 @@ import Card from "../components/Card.astro";
 import DefaultLayout from "../layout/DefaultLayout.astro";
 import { cn } from "../utils";
 
+const pageTitle = "Past Tournament Results";
+
 interface EventItem {
   title: string;
   date: string;
@@ -104,7 +106,7 @@ const events: EventItem[] = [
 ];
 ---
 
-<DefaultLayout>
+<DefaultLayout title={pageTitle}>
   <div class="mb-4 flex">
     <a
       class="hover:bg-link-hover hover:text-bg outline-link-hover rounded-md px-3 py-1 outline transition-colors duration-150"
@@ -114,7 +116,7 @@ const events: EventItem[] = [
     </a>
   </div>
   <div class="m-auto max-w-2xl">
-    <h2 class="text-text text-center">Past Tournament Results</h2>
+    <h2 class="text-text text-center">{pageTitle}</h2>
     {events.map((event) => {
       return (
         <Card class="mb-3 flex items-center justify-between">
