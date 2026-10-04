@@ -29,8 +29,8 @@ It is recommend to [run the app locally](#run-locally) to verify any new changes
 
 ### Page Locations
 
-- Home: [`./src/pages/index.astro`](./src/pages/index.astro)
-- Event Results: [`public/event_results.html`](./public/event_results.html)
+- Home: [`src/pages/index.astro`](./src/pages/index.astro)
+- Event Results: [`src/pages/event-results.astro`](./src/pages/event-results.astro)
 
 ## Development
 
