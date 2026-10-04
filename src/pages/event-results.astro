@@ -1,0 +1,147 @@
+---
+import Card from "../components/Card.astro";
+import DefaultLayout from "../layout/DefaultLayout.astro";
+import { cn } from "../utils";
+
+const pageTitle = "Past Tournament Results";
+
+interface EventItem {
+  title: string;
+  date: string;
+  resultsHref: string;
+  decklistsHref: string | null;
+}
+
+const events: EventItem[] = [
+  {
+    title: "League Challenge",
+    date: "September 26, 2026",
+    resultsHref: "event-results/20260926_league_challenge.html",
+    decklistsHref: "decklists/20260926_league_challenge/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "May 23, 2026",
+    resultsHref: "event-results/20260523_league_challenge.html",
+    decklistsHref: null,
+  },
+  {
+    title: "League Challenge",
+    date: "April 18, 2026",
+    resultsHref: "event-results/20260418_league_challenge.html",
+    decklistsHref: "decklists/20260418_league_challenge/decklists.html",
+  },
+  {
+    title: "League Cup",
+    date: "April 11, 2026",
+    resultsHref: "event-results/20260411_league_cup.html",
+    decklistsHref: "decklists/20260411_league_cup/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "March 7, 2026",
+    resultsHref: "event-results/20260307_league_challenge.html",
+    decklistsHref: "decklists/20260307_league_challenge/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "February 7, 2026",
+    resultsHref: "event-results/20260207_league_challenge.html",
+    decklistsHref: "decklists/20260207_league_challenge/decklists.html",
+  },
+  {
+    title: "League Cup",
+    date: "January 24, 2026",
+    resultsHref: "event-results/20260124_league_cup.html",
+    decklistsHref: "decklists/20260124_league_cup/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "January 3, 2026",
+    resultsHref: "event-results/20260103_league_challenge.html",
+    decklistsHref: "decklists/20260103_league_challenge/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "December 6, 2025",
+    resultsHref: "event-results/20251206_league_challenge.html",
+    decklistsHref: "decklists/20251206_league_challenge/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "November 8, 2025",
+    resultsHref: "event-results/20251108_league_challenge.html",
+    decklistsHref: "decklists/20251108_league_challenge/decklists.html",
+  },
+  {
+    title: "League Cup",
+    date: "October 18, 2025",
+    resultsHref: "event-results/20251018_league_cup.html",
+    decklistsHref: "decklists/20251018_league_cup/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "October 4, 2025",
+    resultsHref: "event-results/20251004_league_challenge.html",
+    decklistsHref: "decklists/20251004_league_challenge/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "September 6, 2025",
+    resultsHref: "event-results/20250906_league_challenge.html",
+    decklistsHref: "decklists/20250906_league_challenge/decklists.html",
+  },
+  {
+    title: "League Challenge",
+    date: "August 9, 2025",
+    resultsHref: "event-results/20250809_league_challenge.html",
+    decklistsHref: "decklists/20250809_league_challenge/decklists.html",
+  },
+  {
+    title: "League Cup",
+    date: "August 2, 2025",
+    resultsHref: "event-results/20250802_league_cup.html",
+    decklistsHref: "decklists/20250802_league_cup/decklists.html",
+  },
+];
+---
+
+<DefaultLayout title={pageTitle}>
+  <div class="mb-4 flex">
+    <a
+      class="hover:bg-link-hover hover:text-bg outline-link-hover rounded-md px-3 py-1 outline transition-colors duration-150"
+      href="/"
+    >
+      ← Back
+    </a>
+  </div>
+  <div class="m-auto max-w-2xl">
+    <h2 class="text-center">{pageTitle}</h2>
+    {events.map((event) => {
+      return (
+        <Card class="mb-3 flex items-center justify-between">
+          {event.title} &ndash; {event.date}
+          <div class="flex gap-2">
+            <a
+              class="outline-link bg-link hover:outline-link-hover hover:text-bg hover:bg-link-hover text-bg rounded-full px-3 py-1 outline transition-colors duration-150"
+              href={event.resultsHref}
+            >
+              Results
+            </a>
+            <a
+              class={cn(
+                "outline-link hover:outline-link-hover rounded-full px-3 py-1 outline",
+                {
+                  invisible: event.decklistsHref === null,
+                },
+              )}
+              href={event.decklistsHref}
+            >
+              Decklists
+            </a>
+          </div>
+        </Card>
+      );
+    })}
+  </div>
+</DefaultLayout>
