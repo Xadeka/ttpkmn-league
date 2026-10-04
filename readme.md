@@ -18,9 +18,9 @@ Use the configured code formatter, Prettier, to keep the code style consistent. 
 
 ```shell
 # List files not formatted
-npm run format-check
+npm run lint:prettier
 # Apply formatter changes
-npm run format-fix
+npm run lint:prettier:fix
 ```
 
 Any static assets should be placed in [`public/`](./public/). The contents of this folder will be copied to the root of the website on build. This means links to these files start from `/`, and not `/public`, e.g. `href="standings.html"` will show the file at `public/standings.html`.
