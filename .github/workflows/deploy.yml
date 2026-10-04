@@ -3,7 +3,6 @@ name: Deploy
 on:
   workflow_call:
 
-# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
