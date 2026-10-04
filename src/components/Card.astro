@@ -1,3 +1,18 @@
-<section class="bg-card text-text shadow-shadow border-border mb-4 rounded-lg border p-4 shadow-md">
+---
+import { cn } from "../utils";
+
+interface Props {
+  class?: string;
+}
+
+const props = Astro.props;
+---
+
+<section
+  class={cn(
+    "bg-card text-text shadow-shadow border-border mb-4 rounded-lg border p-4 shadow-md",
+    props.class,
+  )}
+>
   <slot />
 </section>
