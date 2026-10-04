@@ -1,15 +1,13 @@
 name: Lint
 
 on:
-  # Runs when there are new commits on the default branch
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+
+  workflow_call:
+
   pull_request:
     branches:
       - main
-
-  workflow_dispatch:
 
 jobs:
   eslint:
@@ -22,6 +20,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run lint:eslint
+
   astro:
     runs-on: ubuntu-latest
     steps:
@@ -32,6 +31,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run lint:astro
+
   prettier:
     runs-on: ubuntu-latest
     steps:

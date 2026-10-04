@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    uses: ./.github/workflows/lint.yml
+
+  deploy:
+    needs: [lint]
+    uses: ./.github/workflows/lint.yml
