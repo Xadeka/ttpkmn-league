@@ -10,8 +10,8 @@
     "lint:eslint": "eslint .",
     "lint:eslint:fix": "eslint . --fix",
     "lint:astro": "astro check",
-    "lint:prettier": "prettier ./**/*.{js,json,md,astro} --check",
-    "lint:prettier:fix": "prettier ./**/*.{js,json,md,astro} --write"
+    "lint:prettier": "prettier ./**/*.{js,ts,json,md,astro} --check",
+    "lint:prettier:fix": "prettier ./**/*.{js,ts,json,md,astro} --write"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
