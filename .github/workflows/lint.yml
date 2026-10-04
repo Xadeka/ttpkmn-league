@@ -14,19 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Project
-        uses: ./.github/actions/setup-project
+        uses: $/.github/actions/setup-project
       - run: npm run lint:eslint
 
   astro:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Project
-        uses: ./.github/actions/setup-project
+        uses: $/.github/actions/setup-project
       - run: npm run lint:astro
 
   prettier:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Project
-        uses: ./.github/actions/setup-project
+        uses: $/.github/actions/setup-project
       - run: npm run lint:prettier
