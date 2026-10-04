@@ -1,20 +1,22 @@
-import eslintJs from "@eslint/js";
-import eslintReact from "@eslint-react/eslint-plugin";
-import { reactRefresh } from "eslint-plugin-react-refresh";
-import eslintConfigPrettier from "eslint-config-prettier";
-import globals from "globals";
+// @ts-check
+
 import { defineConfig, globalIgnores } from "eslint/config";
+import eslintJs from "@eslint/js";
+import eslintTs from "typescript-eslint";
+import globals from "globals";
+import eslintPluginAstro from "eslint-plugin-astro";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default defineConfig([
-  globalIgnores(["dist"]),
+  globalIgnores(["dist", ".astro", "node_modules"]),
   {
-    files: ["**/*.{js,jsx}"],
-    extends: [eslintJs.configs.recommended, eslintReact.configs["recommended"]],
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    extends: [eslintJs.configs.recommended, eslintTs.configs.recommended],
     languageOptions: {
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
   },
+  ...eslintPluginAstro.configs.recommended,
   eslintConfigPrettier,
-  reactRefresh.configs.vite(),
 ]);

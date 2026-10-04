@@ -1,0 +1,119 @@
+---
+import DefaultLayout from "../layout/DefaultLayout.astro";
+import Card from "../components/Card.astro";
+import ScheduledEventText from "../components/ScheduledEventText.astro";
+import ChampionshipPointsCard from "../components/ChampionshipPointsCard.astro";
+import FontAwesomeIcon from "../components/FontAwesomeIcon.astro";
+import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
+---
+
+<DefaultLayout>
+  <div class="m-auto max-w-150">
+    <h1>Time Travelers Pokemon League</h1>
+    <Card>
+      <h2>Quick Links</h2>
+      <ul class="space-y-1">
+        <li hidden>
+          <a href="https://forms.gle/LnbFK8dgU6KtwSYK8" target="_blank">
+            🃏 Decklist Submission
+          </a>
+        </li>
+        <li hidden>
+          <a href="pairings.html" target="_blank">
+            🔗 Pairings
+          </a>
+        </li>
+        <li>
+          <a href="pairings-default">🔗 Pairings</a>
+        </li>
+        <li hidden>
+          <a href="standings.html" target="_blank">
+            📊 Standings
+          </a>
+        </li>
+        <li hidden>
+          <a href="https://forms.gle/mbcM8xtzFN6HCDUk6" target="_blank">
+            ✍️ Post Event Survey
+          </a>
+        </li>
+        <li>
+          <a href="https://discord.gg/bQNVEmvh4u" target="_blank">
+            <FontAwesomeIcon icon={faDiscord} class="text-discord" /> Time
+            Travelers Discord
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/TTPKMN" target="_blank">
+            <FontAwesomeIcon icon={faTwitter} class="text-twitter" /> League
+            Twitter
+          </a>
+        </li>
+        <li>
+          <a href="event_results.html" target="_blank">
+            🏆 Past Event Results
+          </a>
+        </li>
+      </ul>
+    </Card>
+
+    <Card>
+      <h2>Wi-Fi Info</h2>
+      <p>
+        <span class="font-bold">Network:</span> Time Travelers_Guest
+      </p>
+      <p>
+        <span class="font-bold">Password:</span> TT_Guest
+      </p>
+    </Card>
+
+    <Card>
+      <h2>Upcoming Events</h2>
+      <ScheduledEventText datetime="2026-10-03 11:30" type="league" />
+      <p>
+        <span class="font-bold">No League October 10</span>
+      </p>
+      <ScheduledEventText datetime="2026-10-17 12:00" type="challenge" />
+      <ScheduledEventText
+        datetime="2026-10-24 12:00"
+        type="Delta Reign Prerelease"
+      />
+      <ScheduledEventText
+        datetime="2026-10-25 12:30"
+        type="Delta Reign Prerelease"
+      />
+      <ScheduledEventText
+        datetime="2026-10-31 11:30"
+        type="League (Pokeween!)"
+      />
+      <ScheduledEventText
+        datetime="2026-11-01 12:30"
+        type="Delta Reign Prerelease"
+      />
+    </Card>
+
+    <Card>
+      <h2>October League Challenge</h2>
+      <p>
+        <span class="font-bold">Location:</span> 3116 12 Mile Road, Berkley, MI
+        48072
+      </p>
+      <p>
+        <span class="font-bold">Date:</span> October 17, 2026
+      </p>
+      <p>
+        <span class="font-bold">Time:</span> Round 1 starts at 12:05 PM. Store
+        opens at 11:00 AM. If you do not have your decklist submitted by noon,
+        you will receive a loss for round 1.
+      </p>
+      <p>
+        <span class="font-bold">Rounds:</span> X Swiss rounds&mdash;best of
+        one&mdash;30 minutes + 3 turns
+      </p>
+      <p>
+        <span class="font-bold">Staff:</span> Conor Devins
+      </p>
+    </Card>
+
+    <ChampionshipPointsCard type="challenge" />
+  </div>
+</DefaultLayout>

@@ -1,0 +1,21 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import { cn } from "../utils";
+
+interface Props {
+  title?: string;
+  class?: string;
+}
+
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={props.title} />
+  </head>
+  <body class={cn("p-4 bg-bg text-text", props.class)}>
+    <slot />
+  </body>
+</html>

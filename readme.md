@@ -18,9 +18,9 @@ Use the configured code formatter, Prettier, to keep the code style consistent. 
 
 ```shell
 # List files not formatted
-npm run format-check
+npm run lint:prettier
 # Apply formatter changes
-npm run format-fix
+npm run lint:prettier:fix
 ```
 
 Any static assets should be placed in [`public/`](./public/). The contents of this folder will be copied to the root of the website on build. This means links to these files start from `/`, and not `/public`, e.g. `href="standings.html"` will show the file at `public/standings.html`.
@@ -29,10 +29,12 @@ It is recommend to [run the app locally](#run-locally) to verify any new changes
 
 ### Page Locations
 
-- Home: [`src/pages/home.jsx`](./src/home.jsx)
+- Home: [`./src/pages/index.astro`](./src/pages/index.astro)
 - Event Results: [`public/event_results.html`](./public/event_results.html)
 
 ## Development
+
+This project is built with [Astro](https://astro.build/). Refer to [their documentation](https://docs.astro.build/) for guides and references.
 
 ### Setup
 

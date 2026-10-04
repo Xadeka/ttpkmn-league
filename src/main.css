@@ -10,4 +10,24 @@
   --color-link: #58a6ff;
   --color-link-hover: #79b8ff;
   --color-accent: #cc0000;
+  --color-discord: #5865f2;
+  --color-twitter: #1da1f2;
+}
+
+@layer utilities {
+  h1 {
+    @apply text-accent m-0 mb-4 text-center text-3xl font-bold;
+  }
+
+  h2 {
+    @apply m-0 mb-3 text-xl font-bold;
+  }
+
+  p {
+    @apply mb-2 last:mb-0;
+  }
+
+  a {
+    @apply text-link hover:text-link-hover;
+  }
 }
