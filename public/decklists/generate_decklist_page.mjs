@@ -137,7 +137,7 @@ function generateDecklistHTML(eventName, eventDate, players) {
 </head>
 <body>
   <header>
-    <a href="/event_results.html" class="back-btn">All Events</a>
+    <a href="/event-results" class="back-btn">All Events</a>
     <h1>Top 8 Decklists</h1>
     <p class="sub">${eventName} • ${eventDate}</p>
   </header>
