@@ -79,7 +79,6 @@ const props = Astro.props;
       const imageSelector = `[data-light-box\\:group="${this.dataset.group}"]`;
       const images = Array.from(document.querySelectorAll(imageSelector));
       images.forEach((image, index) => {
-        image.classList.add("cursor-zoom-in");
         image.addEventListener("click", (e) => {
           e.stopPropagation();
           this.open(index);
