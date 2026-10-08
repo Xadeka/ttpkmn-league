@@ -5,10 +5,17 @@ import Card from "../../../components/Card.astro";
 
 export async function getStaticPaths() {
   const events = await getCollection("events");
-  return events.map((event) => ({
-    params: { eventId: event.id },
-    props: event,
-  }));
+  return events
+    .map((event) => {
+      if (event.data.decklists.length === 0) {
+        return null;
+      }
+      return {
+        params: { eventId: event.id },
+        props: event,
+      };
+    })
+    .filter((event) => event !== null);
 }
 
 type Props = CollectionEntry<"events">;
