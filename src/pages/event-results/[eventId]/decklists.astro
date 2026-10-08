@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import DefaultLayout from "../../../layout/DefaultLayout.astro";
 import Card from "../../../components/Card.astro";
+import Lightbox from "../../../components/Lightbox.astro";
 
 export async function getStaticPaths() {
   const events = await getCollection("events");
@@ -50,18 +51,18 @@ function getPlacementText(placement: number) {
     <h3 class="text-muted mb-6 text-center">
       {event.description} • {event.eventDate}
     </h3>
-    <!-- TODO: Lightbox on img click -->
     {event.decklists.map((decklist) => {
+      const placement = getPlacementText(decklist.placement);
       return (
         <Card class="overflow-hidden p-0">
           <img
             src={`/event-results/${props.id}/${decklist.placement}.png`}
             alt=""
+            data-lightbox-image
+            data-lightbox-caption={`${placement} Place — ${decklist.playerName} • ${decklist.deckName}`}
           />
           <div class="flex flex-col p-4">
-            <span class="text-link font-bold">
-              {getPlacementText(decklist.placement)} Place
-            </span>
+            <span class="text-link font-bold">{placement} Place</span>
             <span class="text-lg font-bold">{decklist.playerName}</span>
             <span class="text-muted">{decklist.deckName}</span>
           </div>
@@ -69,4 +70,5 @@ function getPlacementText(placement: number) {
       );
     })}
   </div>
+  <Lightbox />
 </DefaultLayout>

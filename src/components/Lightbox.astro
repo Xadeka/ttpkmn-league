@@ -1,0 +1,153 @@
+---
+import {
+  faChevronLeft,
+  faChevronRight,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import FontAwesomeIcon from "./FontAwesomeIcon.astro";
+---
+
+<div
+  id="lightbox"
+  class="fixed inset-0 z-50 hidden items-center justify-center overflow-hidden bg-black/90 backdrop-blur-xs"
+>
+  <button
+    data-lightbox-close-button
+    class="absolute top-0 right-0 z-10 cursor-pointer p-6 text-white transition-colors hover:bg-white/5"
+  >
+    <FontAwesomeIcon icon={faXmark} />
+  </button>
+
+  <button
+    data-lightbox-prev-button
+    class="absolute top-1/2 left-3 -translate-y-1/2 cursor-pointer p-6 text-white transition-colors hover:bg-white/5"
+  >
+    <FontAwesomeIcon icon={faChevronLeft} />
+  </button>
+
+  <figure class="flex max-h-screen max-w-screen flex-col items-center overflow-hidden rounded">
+    <img
+      id="lightbox-image"
+      src=""
+      alt=""
+      class="h-auto max-h-screen w-auto max-w-screen rounded object-contain"
+    />
+    <figcaption
+      id="lightbox-image-caption"
+      class="sticky bottom-0 w-full bg-black/60 px-6 py-4 text-center"
+    />
+  </figure>
+
+  <button
+    data-lightbox-next-button
+    class="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer p-6 text-white transition-colors hover:bg-white/5"
+  >
+    <FontAwesomeIcon icon={faChevronRight} />
+  </button>
+</div>
+
+<script>
+  const lightbox = document.querySelector("#lightbox");
+  const lightboxImg =
+    document.querySelector<HTMLImageElement>("#lightbox-image");
+  const lightboxImageCaption = document.querySelector<HTMLDivElement>(
+    "#lightbox-image-caption",
+  );
+  const closeButton = document.querySelector<HTMLButtonElement>(
+    "[data-lightbox-close-button]",
+  );
+  const nextButton = document.querySelector<HTMLButtonElement>(
+    "[data-lightbox-next-button]",
+  );
+  const previousButton = document.querySelector("[data-lightbox-prev-button]");
+  const galleryImages = Array.from(
+    document.querySelectorAll<HTMLImageElement>("[data-lightbox-image]"),
+  );
+
+  const imageData = galleryImages.map((img) => {
+    return {
+      src: img.src,
+      caption: img.getAttribute("data-lightbox-caption") ?? "",
+    };
+  });
+
+  let currentIndex = 0;
+
+  function open(index: number) {
+    if (lightbox === null) {
+      return;
+    }
+    currentIndex = index;
+    updateImage();
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function close() {
+    if (lightbox === null) {
+      return;
+    }
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  function updateImage() {
+    const data = imageData[currentIndex];
+    if (lightboxImg) {
+      lightboxImg.src = data.src;
+    }
+    if (lightboxImageCaption) {
+      lightboxImageCaption.innerText = data.caption;
+    }
+  }
+
+  function next() {
+    currentIndex += 1;
+    if (currentIndex >= imageData.length) {
+      currentIndex = 0;
+    }
+    updateImage();
+  }
+
+  function previous() {
+    currentIndex -= 1;
+    if (currentIndex < 0) {
+      currentIndex = imageData.length - 1;
+    }
+    updateImage();
+  }
+
+  galleryImages.forEach((img, index) => {
+    img.classList.add("cursor-zoom-in");
+    img.addEventListener("click", (e) => {
+      e.stopPropagation();
+      open(index);
+    });
+  });
+  closeButton?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    close();
+  });
+  nextButton?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    next();
+  });
+  previousButton?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    previous();
+  });
+  document.addEventListener("keydown", (e) => {
+    e.stopPropagation();
+    if (lightbox === null) {
+      return;
+    }
+    if (lightbox.classList.contains("hidden")) {
+      return;
+    }
+    if (e.key === "ArrowRight") next();
+    if (e.key === "ArrowLeft") previous();
+    if (e.key === "Escape") close();
+  });
+</script>
