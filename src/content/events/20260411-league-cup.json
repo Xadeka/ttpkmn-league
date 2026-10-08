@@ -1,0 +1,48 @@
+{
+  "title": "Top 8 Decklists",
+  "description": "Spring League Cup",
+  "type": "League Cup",
+  "eventDate": "April 11, 2026",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Matthew Kish",
+      "deckName": "Dragapult ex/Blaziken ex"
+    },
+    {
+      "placement": 2,
+      "playerName": "Jack Merten",
+      "deckName": "Marnie's Grimmsnarl ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "Vicky Edwards",
+      "deckName": "Cynthia's Garchomp ex"
+    },
+    {
+      "placement": 4,
+      "playerName": "RJ Brahmer",
+      "deckName": "Mega Diancie ex/Dusknoir"
+    },
+    {
+      "placement": 5,
+      "playerName": "Devin Holland",
+      "deckName": "Dragapult ex/Blaziken ex"
+    },
+    {
+      "placement": 6,
+      "playerName": "Anon Cheewakarn",
+      "deckName": "Dragapult ex"
+    },
+    {
+      "placement": 7,
+      "playerName": "gwen durell",
+      "deckName": "Dragapult ex"
+    },
+    {
+      "placement": 8,
+      "playerName": "Alex Crean",
+      "deckName": "Ethan's Typhlosion"
+    }
+  ]
+}

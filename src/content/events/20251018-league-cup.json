@@ -1,0 +1,48 @@
+{
+  "title": "Top 8 Decklists",
+  "description": "Fall League Cup",
+  "type": "League Cup",
+  "eventDate": " October 18, 2025",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Mustafa Tobah",
+      "deckName": "Dragapult ex"
+    },
+    {
+      "placement": 2,
+      "playerName": "John Le",
+      "deckName": "Raging Bolt ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "Kyle Pyykkonen",
+      "deckName": "Crustle"
+    },
+    {
+      "placement": 4,
+      "playerName": "Matthew Kish",
+      "deckName": "Marnie's Grimmsnarl ex"
+    },
+    {
+      "placement": 5,
+      "playerName": "Alex Baker",
+      "deckName": "Ceruledge ex"
+    },
+    {
+      "placement": 6,
+      "playerName": "Chris Antrim",
+      "deckName": "Joltik Box"
+    },
+    {
+      "placement": 7,
+      "playerName": "Samantha Wancour",
+      "deckName": "Ceruledge ex"
+    },
+    {
+      "placement": 8,
+      "playerName": "Alex Schemanske",
+      "deckName": "Charizard ex/Pidgeot ex"
+    }
+  ]
+}

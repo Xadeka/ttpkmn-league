@@ -1,0 +1,28 @@
+{
+  "title": "Top 4 Decklists",
+  "description": "February League Challenge",
+  "type": "League Challenge",
+  "eventDate": "February 7, 2026",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Josh Frink",
+      "deckName": "Gholdengo ex"
+    },
+    {
+      "placement": 2,
+      "playerName": "Jack Merten",
+      "deckName": "Marnie's Grimmsnarl ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "Vincent McClintock",
+      "deckName": "Alakazam/Dudunsparce"
+    },
+    {
+      "placement": 4,
+      "playerName": "Skylar Fox",
+      "deckName": "Pidgeot Control"
+    }
+  ]
+}

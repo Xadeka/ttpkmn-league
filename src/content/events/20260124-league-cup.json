@@ -1,0 +1,48 @@
+{
+  "title": "Top 8 Decklists",
+  "description": "Winter League Cup",
+  "type": "League Cup",
+  "eventDate": "January 24, 2026",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Kyle Pyykkonen",
+      "deckName": "Dragapult ex/Dusknoir"
+    },
+    {
+      "placement": 2,
+      "playerName": "Chris Antrim",
+      "deckName": "Gholdengo ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "Skylar Fox",
+      "deckName": "Gardevoir ex/Jellicent ex"
+    },
+    {
+      "placement": 4,
+      "playerName": "Kris Kavanagh",
+      "deckName": "Mega Lopunny ex/Dusknoir"
+    },
+    {
+      "placement": 5,
+      "playerName": "Jack Merten",
+      "deckName": "Marnie's Grimmsnarl ex"
+    },
+    {
+      "placement": 6,
+      "playerName": "Josh Taylor",
+      "deckName": "N's Zoroark ex"
+    },
+    {
+      "placement": 7,
+      "playerName": "Zack Taylor",
+      "deckName": "N's Zoroark ex"
+    },
+    {
+      "placement": 8,
+      "playerName": "Jeff Locke",
+      "deckName": "Mega Sharpedo ex/Toxtricity"
+    }
+  ]
+}

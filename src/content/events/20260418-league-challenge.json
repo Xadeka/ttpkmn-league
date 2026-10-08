@@ -1,0 +1,28 @@
+{
+  "title": "Top 4 Decklists",
+  "description": "April League Challenge",
+  "type": "League Challenge",
+  "eventDate": "April 18, 2026",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Kenny Packala",
+      "deckName": "Festival Lead"
+    },
+    {
+      "placement": 2,
+      "playerName": "Christina Korsak",
+      "deckName": "Dragapult ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "Kyle Tokarczyk",
+      "deckName": "Dragapult ex/Blaziken ex"
+    },
+    {
+      "placement": 4,
+      "playerName": "Jeff Locke",
+      "deckName": "Marnie's Grimmsnarl ex"
+    }
+  ]
+}

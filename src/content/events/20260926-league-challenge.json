@@ -1,0 +1,48 @@
+{
+  "title": "Top 8 Decklists",
+  "description": "September League Challenge",
+  "type": "League Challenge",
+  "eventDate": "September 26, 2026",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "James McDaid",
+      "deckName": "Dragapult ex/Dusknoir"
+    },
+    {
+      "placement": 2,
+      "playerName": "Kyle Pyykkonen",
+      "deckName": "Dragapult ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "James Hitch",
+      "deckName": "Hydrapple ex"
+    },
+    {
+      "placement": 4,
+      "playerName": "Emiliano Pérez",
+      "deckName": "Beedrill ex"
+    },
+    {
+      "placement": 5,
+      "playerName": "Chris Bargeron",
+      "deckName": "Hide n Sneak"
+    },
+    {
+      "placement": 6,
+      "playerName": "Elliott Clarke",
+      "deckName": "Dragapult ex"
+    },
+    {
+      "placement": 7,
+      "playerName": "Noah Mueller",
+      "deckName": "Slowking"
+    },
+    {
+      "placement": 8,
+      "playerName": "Taha Muhammad-Ali",
+      "deckName": "N's Zoroark ex"
+    }
+  ]
+}

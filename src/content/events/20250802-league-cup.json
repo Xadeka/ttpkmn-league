@@ -1,0 +1,48 @@
+{
+  "title": "Top 8 Decklists",
+  "description": "Summer League Cup",
+  "type": "League Cup",
+  "eventDate": "August 2, 2025",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "James Hitch",
+      "deckName": "Okidogi/Scizor"
+    },
+    {
+      "placement": 2,
+      "playerName": "Solomon Shurge",
+      "deckName": "Tera Box"
+    },
+    {
+      "placement": 3,
+      "playerName": "Edward Jin",
+      "deckName": "Charizard ex/Pidgeot ex"
+    },
+    {
+      "placement": 4,
+      "playerName": "Grant Walworth",
+      "deckName": "Eevee Box"
+    },
+    {
+      "placement": 5,
+      "playerName": "Connor Barash",
+      "deckName": "Marnie's Grimmsnarl ex"
+    },
+    {
+      "placement": 6,
+      "playerName": "Kyle Pyykkonen",
+      "deckName": "Marnie's Grimmsnarl ex"
+    },
+    {
+      "placement": 7,
+      "playerName": "Kris Kavanagh",
+      "deckName": "Ethan's Ho-Oh ex/Armarouge"
+    },
+    {
+      "placement": 8,
+      "playerName": "Chris Antrim",
+      "deckName": "Joltik Box"
+    }
+  ]
+}

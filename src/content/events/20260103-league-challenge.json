@@ -1,0 +1,48 @@
+{
+  "title": "Top 8 Decklists",
+  "description": "January League Challenge",
+  "type": "League Challenge",
+  "eventDate": "January 3, 2026",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Levi Wilson",
+      "deckName": "Gholdengo ex"
+    },
+    {
+      "placement": 2,
+      "playerName": "Skylar Fox",
+      "deckName": "Gardevoir ex/Jellicent ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "Caleb Wheeler",
+      "deckName": "Gholdengo ex"
+    },
+    {
+      "placement": 4,
+      "playerName": "Samantha Wancour",
+      "deckName": "Gholdengo ex"
+    },
+    {
+      "placement": 5,
+      "playerName": "Andy Jiang",
+      "deckName": "N's Zoroark ex"
+    },
+    {
+      "placement": 6,
+      "playerName": "Ben DeGarmo",
+      "deckName": "Gholdengo ex"
+    },
+    {
+      "placement": 7,
+      "playerName": "Josh Wheeler",
+      "deckName": "Gardevoir ex"
+    },
+    {
+      "placement": 8,
+      "playerName": "John Le",
+      "deckName": "Miraidon ex/Eelektrik"
+    }
+  ]
+}

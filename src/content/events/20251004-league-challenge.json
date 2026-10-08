@@ -1,0 +1,28 @@
+{
+  "title": "Top 4 Decklists",
+  "description": "October League Challenge",
+  "type": "League Challenge",
+  "eventDate": "October 4, 2025",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Jeff Locke",
+      "deckName": "Miraidon ex/Magneton"
+    },
+    {
+      "placement": 2,
+      "playerName": "John Le",
+      "deckName": "Miraidon ex/Eelektrik"
+    },
+    {
+      "placement": 3,
+      "playerName": "Matthew Kish",
+      "deckName": "Marnie's Grimmsnarl ex"
+    },
+    {
+      "placement": 4,
+      "playerName": "Ben DeGarmo",
+      "deckName": "Charizard ex/Dusknoir"
+    }
+  ]
+}

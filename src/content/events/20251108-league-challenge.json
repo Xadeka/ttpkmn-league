@@ -1,0 +1,28 @@
+{
+  "title": "Top 4 Decklists",
+  "description": "November League Challenge",
+  "type": "League Challenge",
+  "eventDate": "November 8, 2025",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Hunter Potter",
+      "deckName": "Greninja ex"
+    },
+    {
+      "placement": 2,
+      "playerName": "Jeff Locke",
+      "deckName": "Miraidon ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "Matthew Kish",
+      "deckName": "Marnie's Grimmsnarl ex"
+    },
+    {
+      "placement": 4,
+      "playerName": "Austin Chabie",
+      "deckName": "Gholdengo ex"
+    }
+  ]
+}
