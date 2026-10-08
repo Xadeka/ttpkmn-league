@@ -130,6 +130,12 @@ import FontAwesomeIcon from "./FontAwesomeIcon.astro";
     e.stopPropagation();
     close();
   });
+  lightbox?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (e.target === lightbox) {
+      close();
+    }
+  });
   if (galleryImages.length <= 1) {
     nextButton?.classList.add("hidden");
     previousButton?.classList.add("hidden");
