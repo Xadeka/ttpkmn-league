@@ -20,20 +20,28 @@ export async function getStaticPaths() {
 }
 
 type Props = CollectionEntry<"events">;
+type Event = Props["data"];
+type Decklist = Event["decklists"][0];
+
 const props = Astro.props;
 const event = props.data;
 
-function getPlacementText(placement: number) {
-  switch (placement) {
-    case 1:
-      return "1st";
-    case 2:
-      return "2nd";
-    case 3:
-      return "3rd";
-    default:
-      return placement + "th";
+function getImageSource(decklist: Decklist) {
+  return `/event-results/${props.id}/${decklist.placement}.png`;
+}
+
+function getPlacementText(decklist: Decklist) {
+  let position;
+  if (decklist.placement === 1) {
+    position = "1st";
+  } else if (decklist.placement === 2) {
+    position = "2nd";
+  } else if (decklist.placement === 3) {
+    position = "3rd";
+  } else {
+    position = decklist.placement + "th";
   }
+  return position + " Place";
 }
 ---
 
@@ -52,17 +60,17 @@ function getPlacementText(placement: number) {
       {event.description} • {event.eventDate}
     </h3>
     {event.decklists.map((decklist) => {
-      const placement = getPlacementText(decklist.placement);
       return (
         <Card class="overflow-hidden p-0">
           <img
-            src={`/event-results/${props.id}/${decklist.placement}.png`}
+            src={getImageSource(decklist)}
             alt=""
-            data-lightbox-image
-            data-lightbox-caption={`${placement} Place — ${decklist.playerName} • ${decklist.deckName}`}
+            data-light-box:group="decklist"
           />
           <div class="flex flex-col p-4">
-            <span class="text-link font-bold">{placement} Place</span>
+            <span class="text-link font-bold">
+              {getPlacementText(decklist)}
+            </span>
             <span class="text-lg font-bold">{decklist.playerName}</span>
             <span class="text-muted">{decklist.deckName}</span>
           </div>
@@ -70,5 +78,13 @@ function getPlacementText(placement: number) {
       );
     })}
   </div>
-  <Lightbox />
+  <Lightbox
+    group="decklist"
+    images={event.decklists.map((decklist) => {
+      return {
+        src: getImageSource(decklist),
+        caption: `${getPlacementText(decklist)} — ${decklist.playerName} • ${decklist.deckName}`,
+      };
+    })}
+  />
 </DefaultLayout>

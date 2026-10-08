@@ -5,159 +5,164 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import FontAwesomeIcon from "./FontAwesomeIcon.astro";
+
+interface LightboxImage {
+  src: string;
+  caption?: string;
+}
+
+interface Props {
+  group: string;
+  images: LightboxImage[];
+}
+
+const props = Astro.props;
 ---
 
-<div
-  id="lightbox"
+<light-box
   class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-xs"
+  data-group={props.group}
 >
   <button
-    data-lightbox-close-button
+    data-light-box-close-button
     class="absolute top-4 right-4 z-10 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
   >
     <FontAwesomeIcon icon={faXmark} />
   </button>
 
   <button
-    data-lightbox-prev-button
+    data-light-box-prev-button
     class="absolute top-1/2 left-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
   >
     <FontAwesomeIcon icon={faChevronLeft} />
   </button>
 
-  <figure class="flex max-h-screen max-w-[85vw] flex-col items-center overflow-hidden rounded">
-    <img
-      id="lightbox-image"
-      src=""
-      alt=""
-      class="h-auto max-h-screen w-auto max-w-[85vw] rounded object-contain"
-    />
-    <figcaption
-      id="lightbox-image-caption"
-      class="sticky bottom-0 w-full px-6 py-4 text-center"
-    />
-  </figure>
+  <ul>
+    {props.images.map((image, index) => {
+      return (
+        <li>
+          <figure class="flex max-h-screen max-w-[85vw] flex-col items-center overflow-hidden rounded">
+            <img
+              src={image.src}
+              alt=""
+              class="h-auto max-h-screen w-auto max-w-[85vw] rounded object-contain"
+            />
+            <figcaption class="sticky bottom-0 w-full px-6 py-4 text-center">
+              {image.caption}
+            </figcaption>
+          </figure>
+        </li>
+      );
+    })}
+  </ul>
 
   <button
-    data-lightbox-next-button
+    data-light-box-next-button
     class="absolute top-1/2 right-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
   >
     <FontAwesomeIcon icon={faChevronRight} />
   </button>
-</div>
+</light-box>
 
 <script>
-  const lightbox = document.querySelector("#lightbox");
-  const lightboxImg =
-    document.querySelector<HTMLImageElement>("#lightbox-image");
-  const lightboxImageCaption = document.querySelector<HTMLDivElement>(
-    "#lightbox-image-caption",
-  );
-  const closeButton = document.querySelector<HTMLButtonElement>(
-    "[data-lightbox-close-button]",
-  );
-  const nextButton = document.querySelector<HTMLButtonElement>(
-    "[data-lightbox-next-button]",
-  );
-  const previousButton = document.querySelector("[data-lightbox-prev-button]");
-  const galleryImages = Array.from(
-    document.querySelectorAll<HTMLImageElement>("[data-lightbox-image]"),
-  );
+  class LightBoxElement extends HTMLElement {
+    currentIndex = 0;
+    slides: HTMLLIElement[] = [];
 
-  const imageData = galleryImages.map((img) => {
-    return {
-      src: img.src,
-      caption: img.getAttribute("data-lightbox-caption") ?? "",
-    };
-  });
+    connectedCallback() {
+      this.slides = Array.from(this.querySelectorAll<HTMLLIElement>("li"));
+      const closeButton = this.querySelector<HTMLButtonElement>(
+        "[data-light-box-close-button]",
+      );
+      const nextButton = this.querySelector<HTMLButtonElement>(
+        "[data-light-box-next-button]",
+      );
+      const previousButton = this.querySelector("[data-light-box-prev-button]");
 
-  let currentIndex = 0;
-
-  function open(index: number) {
-    if (lightbox === null) {
-      return;
+      Array.from(
+        document.querySelectorAll<HTMLImageElement>(
+          `[data-light-box\\:group="${this.dataset.group}"]`,
+        ),
+      ).forEach((img, index) => {
+        img.classList.add("cursor-zoom-in");
+        img.addEventListener("click", (e) => {
+          e.stopPropagation();
+          this.open(index);
+        });
+      });
+      closeButton?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.close();
+      });
+      this.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (e.target === this) {
+          this.close();
+        }
+      });
+      if (this.slides.length <= 1) {
+        nextButton?.classList.add("hidden");
+        previousButton?.classList.add("hidden");
+      }
+      nextButton?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.next();
+      });
+      previousButton?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.previous();
+      });
+      document.addEventListener("keydown", (e) => {
+        e.stopPropagation();
+        if (this.classList.contains("hidden")) {
+          return;
+        }
+        if (e.key === "ArrowRight") this.next();
+        if (e.key === "ArrowLeft") this.previous();
+        if (e.key === "Escape") this.close();
+      });
     }
-    currentIndex = index;
-    updateImage();
-    lightbox.classList.remove("hidden");
-    lightbox.classList.add("flex");
-    document.body.classList.add("overflow-hidden");
+
+    open(index: number) {
+      this.currentIndex = index;
+      this.updateImage();
+      this.classList.remove("hidden");
+      this.classList.add("flex");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    close() {
+      this.classList.add("hidden");
+      this.classList.remove("flex");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    updateImage() {
+      this.slides.forEach((slide, index) => {
+        if (index === this.currentIndex) {
+          slide.classList.remove("hidden");
+        } else {
+          slide.classList.add("hidden");
+        }
+      });
+    }
+
+    next() {
+      this.currentIndex += 1;
+      if (this.currentIndex >= this.slides.length) {
+        this.currentIndex = 0;
+      }
+      this.updateImage();
+    }
+
+    previous() {
+      this.currentIndex -= 1;
+      if (this.currentIndex < 0) {
+        this.currentIndex = this.slides.length - 1;
+      }
+      this.updateImage();
+    }
   }
 
-  function close() {
-    if (lightbox === null) {
-      return;
-    }
-    lightbox.classList.add("hidden");
-    lightbox.classList.remove("flex");
-    document.body.classList.remove("overflow-hidden");
-  }
-
-  function updateImage() {
-    const data = imageData[currentIndex];
-    if (lightboxImg) {
-      lightboxImg.src = data.src;
-    }
-    if (lightboxImageCaption) {
-      lightboxImageCaption.innerText = data.caption;
-    }
-  }
-
-  function next() {
-    currentIndex += 1;
-    if (currentIndex >= imageData.length) {
-      currentIndex = 0;
-    }
-    updateImage();
-  }
-
-  function previous() {
-    currentIndex -= 1;
-    if (currentIndex < 0) {
-      currentIndex = imageData.length - 1;
-    }
-    updateImage();
-  }
-
-  galleryImages.forEach((img, index) => {
-    img.classList.add("cursor-zoom-in");
-    img.addEventListener("click", (e) => {
-      e.stopPropagation();
-      open(index);
-    });
-  });
-  closeButton?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    close();
-  });
-  lightbox?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (e.target === lightbox) {
-      close();
-    }
-  });
-  if (galleryImages.length <= 1) {
-    nextButton?.classList.add("hidden");
-    previousButton?.classList.add("hidden");
-  }
-  nextButton?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    next();
-  });
-  previousButton?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    previous();
-  });
-  document.addEventListener("keydown", (e) => {
-    e.stopPropagation();
-    if (lightbox === null) {
-      return;
-    }
-    if (lightbox.classList.contains("hidden")) {
-      return;
-    }
-    if (e.key === "ArrowRight") next();
-    if (e.key === "ArrowLeft") previous();
-    if (e.key === "Escape") close();
-  });
+  customElements.define("light-box", LightBoxElement);
 </script>
