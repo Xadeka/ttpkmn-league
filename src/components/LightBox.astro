@@ -23,7 +23,8 @@ const props = Astro.props;
 <light-box data-group={props.group}>
   <dialog
     class={cn(
-      "fixed inset-0 z-50 flex h-full w-full items-center justify-center text-white",
+      "fixed inset-0 min-h-screen min-w-screen text-white",
+      "flex items-center justify-center overscroll-contain",
       "invisible bg-black/0 opacity-0 backdrop-blur-none",
       "open:visible open:bg-black/40 open:opacity-100 open:backdrop-blur-sm",
       "transition-all duration-200",
@@ -171,7 +172,6 @@ const props = Astro.props;
     open(index: number) {
       this.currentIndex = index;
       this.updateImage();
-      // TODO: showModal?
       this.dialog.show();
       document.body.classList.add("overflow-hidden");
     }
