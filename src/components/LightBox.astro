@@ -118,10 +118,14 @@ const props = Astro.props;
       }
 
       this.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (e.target === this) {
-          this.close();
+        if (!(e.target instanceof HTMLElement)) {
+          return;
         }
+        if (["IMG", "FIGCAPTION", "BUTTON"].includes(e.target.tagName)) {
+          return;
+        }
+        e.stopPropagation();
+        this.close();
       });
 
       document.addEventListener("keydown", (e) => {
