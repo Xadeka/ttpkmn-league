@@ -74,6 +74,7 @@ const props = Astro.props;
   class LightBoxElement extends HTMLElement {
     currentIndex = 0;
     slides: HTMLLIElement[] = [];
+    lastMouseDownTarget: HTMLElement | null = null;
 
     connectedCallback() {
       this.slides = Array.from(this.querySelectorAll<HTMLLIElement>("li"));
@@ -117,11 +118,25 @@ const props = Astro.props;
         previousButton?.classList.add("hidden");
       }
 
+      this.addEventListener("mousedown", (e) => {
+        if (!(e.target instanceof HTMLElement)) {
+          return;
+        }
+        this.lastMouseDownTarget = e.target;
+        // Allow event to bubble to determine if the "background" was clicked
+      });
+
       this.addEventListener("click", (e) => {
         if (!(e.target instanceof HTMLElement)) {
           return;
         }
-        if (["IMG", "FIGCAPTION", "BUTTON"].includes(e.target.tagName)) {
+        // Do not close the background if these elements were clicked
+        if (["IMG", "FIGCAPTION"].includes(e.target.tagName)) {
+          return;
+        }
+        // Only allow closing if the full click happened within the same target
+        // Sequence: mousedown -> mouseup -> click
+        if (this.lastMouseDownTarget !== e.target) {
           return;
         }
         e.stopPropagation();
