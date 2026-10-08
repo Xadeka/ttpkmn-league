@@ -9,38 +9,38 @@ import FontAwesomeIcon from "./FontAwesomeIcon.astro";
 
 <div
   id="lightbox"
-  class="fixed inset-0 z-50 hidden items-center justify-center overflow-hidden bg-black/90 backdrop-blur-xs"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-xs"
 >
   <button
     data-lightbox-close-button
-    class="absolute top-0 right-0 z-10 cursor-pointer p-6 text-white transition-colors hover:bg-white/5"
+    class="absolute top-4 right-4 z-10 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
   >
     <FontAwesomeIcon icon={faXmark} />
   </button>
 
   <button
     data-lightbox-prev-button
-    class="absolute top-1/2 left-3 -translate-y-1/2 cursor-pointer p-6 text-white transition-colors hover:bg-white/5"
+    class="absolute top-1/2 left-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
   >
     <FontAwesomeIcon icon={faChevronLeft} />
   </button>
 
-  <figure class="flex max-h-screen max-w-screen flex-col items-center overflow-hidden rounded">
+  <figure class="flex max-h-screen max-w-[85vw] flex-col items-center overflow-hidden rounded">
     <img
       id="lightbox-image"
       src=""
       alt=""
-      class="h-auto max-h-screen w-auto max-w-screen rounded object-contain"
+      class="h-auto max-h-screen w-auto max-w-[85vw] rounded object-contain"
     />
     <figcaption
       id="lightbox-image-caption"
-      class="sticky bottom-0 w-full bg-black/60 px-6 py-4 text-center"
+      class="sticky bottom-0 w-full px-6 py-4 text-center"
     />
   </figure>
 
   <button
     data-lightbox-next-button
-    class="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer p-6 text-white transition-colors hover:bg-white/5"
+    class="absolute top-1/2 right-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
   >
     <FontAwesomeIcon icon={faChevronRight} />
   </button>
