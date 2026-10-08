@@ -1,0 +1,64 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import DefaultLayout from "../../../layout/DefaultLayout.astro";
+import Card from "../../../components/Card.astro";
+
+export async function getStaticPaths() {
+  const events = await getCollection("events");
+  return events.map((event) => ({
+    params: { eventId: event.id },
+    props: event,
+  }));
+}
+
+type Props = CollectionEntry<"events">;
+const props = Astro.props;
+const event = props.data;
+
+function getPlacementText(placement: number) {
+  switch (placement) {
+    case 1:
+      return "1st";
+    case 2:
+      return "2nd";
+    case 3:
+      return "3rd";
+    default:
+      return placement + "th";
+  }
+}
+---
+
+<DefaultLayout title={event.description + " Results"}>
+  <div class="mb-4 flex">
+    <a
+      class="hover:bg-link-hover hover:text-bg outline-link-hover rounded-md px-3 py-1 outline transition-colors duration-150"
+      href="/event-results"
+    >
+      ← Back
+    </a>
+  </div>
+  <div class="m-auto max-w-3xl">
+    <h2 class="mb-0 text-center">{event.title}</h2>
+    <h3 class="text-muted mb-6 text-center">
+      {event.description} • {event.eventDate}
+    </h3>
+    {event.decklists.map((decklist) => {
+      return (
+        <Card class="overflow-hidden p-0">
+          <img
+            src={`/decklists/${props.id.replace(/\-/g, "_")}/${decklist.placement}.png`}
+            alt=""
+          />
+          <div class="flex flex-col p-4">
+            <span class="text-link font-bold">
+              {getPlacementText(decklist.placement)} Place
+            </span>
+            <span class="text-lg font-bold">{decklist.playerName}</span>
+            <span class="text-muted">{decklist.deckName}</span>
+          </div>
+        </Card>
+      );
+    })}
+  </div>
+</DefaultLayout>
