@@ -20,64 +20,76 @@ interface Props {
 const props = Astro.props;
 ---
 
-<light-box
-  class={cn(
-    "fixed inset-0 z-50 flex items-center justify-center",
-    "invisible bg-black/0 opacity-0 backdrop-blur-none",
-    "open:visible open:bg-black/40 open:opacity-100 open:backdrop-blur-sm",
-    "transition-all duration-200",
-  )}
-  data-group={props.group}
->
-  <button
-    class="absolute top-4 right-4 z-10 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
-    data-light-box:close
+<light-box data-group={props.group}>
+  <dialog
+    class={cn(
+      "fixed inset-0 z-50 flex h-full w-full items-center justify-center text-white",
+      "invisible bg-black/0 opacity-0 backdrop-blur-none",
+      "open:visible open:bg-black/40 open:opacity-100 open:backdrop-blur-sm",
+      "transition-all duration-200",
+    )}
   >
-    <FontAwesomeIcon icon={faXmark} />
-  </button>
+    <button
+      class="absolute top-4 right-4 z-10 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
+      data-light-box:close
+    >
+      <FontAwesomeIcon icon={faXmark} />
+    </button>
 
-  <button
-    class="absolute top-1/2 left-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
-    data-light-box:previous
-  >
-    <FontAwesomeIcon icon={faChevronLeft} />
-  </button>
+    <button
+      class="absolute top-1/2 left-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
+      data-light-box:previous
+    >
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </button>
 
-  <ul>
-    {props.images.map((image) => {
-      return (
-        <li>
-          <figure class="flex max-h-screen max-w-[90vw] flex-col items-center overflow-hidden rounded px-6">
-            <img
-              src={image.src}
-              alt=""
-              class="h-auto max-h-screen w-auto max-w-full rounded object-contain shadow-xl"
-            />
-            <figcaption class="sticky bottom-0 px-4 py-2 text-center">
-              {image.caption}
-            </figcaption>
-          </figure>
-        </li>
-      );
-    })}
-  </ul>
+    <ul>
+      {props.images.map((image) => {
+        return (
+          <li>
+            <figure class="flex max-h-screen max-w-[90vw] flex-col items-center overflow-hidden rounded px-6">
+              <img
+                src={image.src}
+                alt=""
+                class="h-auto max-h-screen w-auto max-w-full rounded object-contain shadow-xl"
+              />
+              <figcaption class="sticky bottom-0 px-4 py-2 text-center">
+                {image.caption}
+              </figcaption>
+            </figure>
+          </li>
+        );
+      })}
+    </ul>
 
-  <button
-    class="absolute top-1/2 right-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
-    data-light-box:next
-  >
-    <FontAwesomeIcon icon={faChevronRight} />
-  </button>
+    <button
+      class="absolute top-1/2 right-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
+      data-light-box:next
+    >
+      <FontAwesomeIcon icon={faChevronRight} />
+    </button>
+  </dialog>
 </light-box>
 
 <script>
   class LightBoxElement extends HTMLElement {
     currentIndex = 0;
+
     slides: HTMLLIElement[] = [];
     lastMouseDownTarget: HTMLElement | null = null;
 
+    get dialog(): HTMLDialogElement {
+      const value = this.querySelector("dialog");
+      if (!value) {
+        throw Error("light-box: Unable to find root dialog");
+      }
+      return value;
+    }
+
     connectedCallback() {
-      this.slides = Array.from(this.querySelectorAll<HTMLLIElement>("li"));
+      this.slides = Array.from(
+        this.dialog.querySelectorAll<HTMLLIElement>("li") ?? [],
+      );
       this.registerElements();
       this.registerControls();
     }
@@ -95,19 +107,21 @@ const props = Astro.props;
     }
 
     registerControls() {
-      const closeButton = this.querySelector("[data-light-box\\:close]");
+      const closeButton = this.dialog.querySelector("[data-light-box\\:close]");
       closeButton?.addEventListener("click", (e) => {
         e.stopPropagation();
         this.close();
       });
 
-      const nextButton = this.querySelector("[data-light-box\\:next]");
+      const nextButton = this.dialog.querySelector("[data-light-box\\:next]");
       nextButton?.addEventListener("click", (e) => {
         e.stopPropagation();
         this.next();
       });
 
-      const previousButton = this.querySelector("[data-light-box\\:previous]");
+      const previousButton = this.dialog.querySelector(
+        "[data-light-box\\:previous]",
+      );
       previousButton?.addEventListener("click", (e) => {
         e.stopPropagation();
         this.previous();
@@ -157,12 +171,13 @@ const props = Astro.props;
     open(index: number) {
       this.currentIndex = index;
       this.updateImage();
-      this.setAttribute("open", "");
+      // TODO: showModal?
+      this.dialog.show();
       document.body.classList.add("overflow-hidden");
     }
 
     close() {
-      this.removeAttribute("open");
+      this.dialog.close();
       document.body.classList.remove("overflow-hidden");
     }
 
