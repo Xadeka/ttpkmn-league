@@ -47,11 +47,11 @@ const props = Astro.props;
     {props.images.map((image) => {
       return (
         <li>
-          <figure class="flex max-h-screen max-w-[85vw] flex-col items-center overflow-hidden rounded px-3">
+          <figure class="flex max-h-screen max-w-[90vw] flex-col items-center overflow-hidden rounded px-6">
             <img
               src={image.src}
               alt=""
-              class="h-auto max-h-screen w-auto max-w-full rounded object-contain shadow-lg"
+              class="h-auto max-h-screen w-auto max-w-full rounded object-contain shadow-xl"
             />
             <figcaption class="sticky bottom-0 px-4 py-2 text-center">
               {image.caption}
