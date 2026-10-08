@@ -5,6 +5,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import FontAwesomeIcon from "./FontAwesomeIcon.astro";
+import { cn } from "../utils";
 
 interface LightBoxImage {
   src: string;
@@ -20,7 +21,12 @@ const props = Astro.props;
 ---
 
 <light-box
-  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 backdrop-blur-sm"
+  class={cn(
+    "fixed inset-0 z-50 flex items-center justify-center",
+    "invisible bg-black/0 opacity-0 backdrop-blur-none",
+    "open:visible open:bg-black/40 open:opacity-100 open:backdrop-blur-sm",
+    "transition-all duration-200",
+  )}
   data-group={props.group}
 >
   <button
@@ -132,14 +138,12 @@ const props = Astro.props;
     open(index: number) {
       this.currentIndex = index;
       this.updateImage();
-      this.classList.remove("hidden");
-      this.classList.add("flex");
+      this.setAttribute("open", "");
       document.body.classList.add("overflow-hidden");
     }
 
     close() {
-      this.classList.add("hidden");
-      this.classList.remove("flex");
+      this.removeAttribute("open");
       document.body.classList.remove("overflow-hidden");
     }
 
