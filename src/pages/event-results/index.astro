@@ -1,109 +1,25 @@
 ---
+import { getCollection } from "astro:content";
 import Card from "../../components/Card.astro";
 import DefaultLayout from "../../layout/DefaultLayout.astro";
 import { cn } from "../../utils";
 
 const pageTitle = "Past Tournament Results";
 
-interface EventItem {
-  title: string;
-  date: string;
-  resultsHref: string;
-  decklistsHref: string | null;
-}
-
-const events: EventItem[] = [
-  {
-    title: "League Challenge",
-    date: "September 26, 2026",
-    resultsHref: "/event-results/20260926-league-challenge/standings.html",
-    decklistsHref: "/event-results/20260926-league-challenge/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "May 23, 2026",
-    resultsHref: "/event-results/20260523-league-challenge/standings.html",
-    decklistsHref: null,
-  },
-  {
-    title: "League Challenge",
-    date: "April 18, 2026",
-    resultsHref: "/event-results/20260418-league-challenge/standings.html",
-    decklistsHref: "/event-results/20260418-league-challenge/decklists",
-  },
-  {
-    title: "League Cup",
-    date: "April 11, 2026",
-    resultsHref: "/event-results/20260411-league-cup/standings.html",
-    decklistsHref: "/event-results/20260411-league-cup/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "March 7, 2026",
-    resultsHref: "/event-results/20260307-league-challenge/standings.html",
-    decklistsHref: "/event-results/20260307-league-challenge/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "February 7, 2026",
-    resultsHref: "/event-results/20260207-league-challenge/standings.html",
-    decklistsHref: "/event-results/20260207-league-challenge/decklists",
-  },
-  {
-    title: "League Cup",
-    date: "January 24, 2026",
-    resultsHref: "/event-results/20260124-league-cup/standings.html",
-    decklistsHref: "/event-results/20260124-league-cup/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "January 3, 2026",
-    resultsHref: "/event-results/20260103-league-challenge/standings.html",
-    decklistsHref: "/event-results/20260103-league-challenge/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "December 6, 2025",
-    resultsHref: "/event-results/20251206-league-challenge/standings.html",
-    decklistsHref: "/event-results/20251206-league-challenge/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "November 8, 2025",
-    resultsHref: "/event-results/20251108-league-challenge/standings.html",
-    decklistsHref: "/event-results/20251108-league-challenge/decklists",
-  },
-  {
-    title: "League Cup",
-    date: "October 18, 2025",
-    resultsHref: "/event-results/20251018-league-cup/standings.html",
-    decklistsHref: "/event-results/20251018-league-cup/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "October 4, 2025",
-    resultsHref: "/event-results/20251004-league-challenge/standings.html",
-    decklistsHref: "/event-results/20251004-league-challenge/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "September 6, 2025",
-    resultsHref: "/event-results/20250906-league-challenge/standings.html",
-    decklistsHref: "/event-results/20250906-league-challenge/decklists",
-  },
-  {
-    title: "League Challenge",
-    date: "August 9, 2025",
-    resultsHref: "/event-results/20250809-league-challenge/standings.html",
-    decklistsHref: "/event-results/20250809-league-challenge/decklists",
-  },
-  {
-    title: "League Cup",
-    date: "August 2, 2025",
-    resultsHref: "/event-results/20250802-league-cup/standings.html",
-    decklistsHref: "/event-results/20250802-league-cup/decklists",
-  },
-];
+const eventsCollection = await getCollection("events");
+const events = eventsCollection.reverse().map((item) => {
+  const resultsHref = `/event-results/${item.id}/standings.html`;
+  let decklistsHref = null;
+  if (item.data.decklists.length > 0) {
+    decklistsHref = `/event-results/${item.id}/decklists`;
+  }
+  return {
+    title: item.data.type,
+    date: item.data.eventDate,
+    resultsHref: resultsHref,
+    decklistsHref: decklistsHref,
+  };
+});
 ---
 
 <DefaultLayout title={pageTitle}>
