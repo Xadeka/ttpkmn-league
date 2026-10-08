@@ -2,7 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import DefaultLayout from "../../../layout/DefaultLayout.astro";
 import Card from "../../../components/Card.astro";
-import Lightbox from "../../../components/Lightbox.astro";
+import LightBox from "../../../components/LightBox.astro";
 
 export async function getStaticPaths() {
   const events = await getCollection("events");
@@ -79,7 +79,7 @@ function getPlacementText(decklist: Decklist) {
       );
     })}
   </div>
-  <Lightbox
+  <LightBox
     group="decklist"
     images={event.decklists.map((decklist) => {
       return {
