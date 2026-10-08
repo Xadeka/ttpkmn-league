@@ -71,15 +71,16 @@ const props = Astro.props;
 
     connectedCallback() {
       this.slides = Array.from(this.querySelectorAll<HTMLLIElement>("li"));
-      this.registerImages();
+      this.registerElements();
       this.registerControls();
     }
 
-    registerImages() {
-      const imageSelector = `[data-light-box\\:group="${this.dataset.group}"]`;
-      const images = Array.from(document.querySelectorAll(imageSelector));
-      images.forEach((image, index) => {
-        image.addEventListener("click", (e) => {
+    registerElements() {
+      const selector = `[data-light-box\\:group="${this.dataset.group}"]`;
+      const elements = Array.from(document.querySelectorAll(selector));
+      elements.forEach((element, index) => {
+        element.addEventListener("click", (e) => {
+          e.preventDefault();
           e.stopPropagation();
           this.open(index);
         });
