@@ -39,18 +39,15 @@ const events = eventsCollection.reverse().map((item) => {
           {event.title} &ndash; {event.date}
           <div class="flex gap-2">
             <a
-              class="outline-link bg-link hover:outline-link-hover hover:text-bg hover:bg-link-hover text-bg rounded-full px-3 py-1 outline transition-colors duration-150"
+              class="bg-link hover:text-bg hover:bg-link-hover text-bg rounded-full px-3 py-1 transition-colors duration-150"
               href={event.resultsHref}
             >
               Results
             </a>
             <a
-              class={cn(
-                "outline-link hover:outline-link-hover rounded-full px-3 py-1 outline",
-                {
-                  invisible: event.decklistsHref === null,
-                },
-              )}
+              class={cn("rounded-full border px-3 py-1", {
+                invisible: event.decklistsHref === null,
+              })}
               href={event.decklistsHref}
             >
               Decklists
