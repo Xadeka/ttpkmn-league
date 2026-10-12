@@ -1,8 +1,7 @@
 {
-  "title": "Top 8 Decklists",
-  "description": "January League Challenge",
+  "name": "January League Challenge",
   "type": "League Challenge",
-  "eventDate": "January 3, 2026",
+  "date": "January 3, 2026",
   "decklists": [
     {
       "placement": 1,

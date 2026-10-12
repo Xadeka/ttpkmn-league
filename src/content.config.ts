@@ -6,10 +6,9 @@ const events = defineCollection({
   loader: glob({ base: "./src/content/events", pattern: "*.json" }),
   schema: () =>
     z.object({
-      title: z.string(),
-      description: z.string(),
+      name: z.string(),
       type: z.string(),
-      eventDate: z.string(),
+      date: z.string(),
       decklists: z.array(
         z.object({
           placement: z.number().positive(),

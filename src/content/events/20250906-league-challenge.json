@@ -1,8 +1,7 @@
 {
-  "title": "Top Decklist",
-  "description": "September League Challenge",
+  "name": "September League Challenge",
   "type": "League Challenge",
-  "eventDate": "September 6, 2025",
+  "date": "September 6, 2025",
   "decklists": [
     {
       "placement": 1,

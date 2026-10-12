@@ -1,8 +1,7 @@
 {
-  "title": "Top 4 Decklists",
-  "description": "October League Challenge",
+  "name": "October League Challenge",
   "type": "League Challenge",
-  "eventDate": "October 4, 2025",
+  "date": "October 4, 2025",
   "decklists": [
     {
       "placement": 1,

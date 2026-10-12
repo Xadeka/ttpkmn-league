@@ -1,8 +1,7 @@
 {
-  "title": "Top 8 Decklists",
-  "description": "Fall League Cup",
+  "name": "Fall League Cup",
   "type": "League Cup",
-  "eventDate": " October 18, 2025",
+  "date": " October 18, 2025",
   "decklists": [
     {
       "placement": 1,

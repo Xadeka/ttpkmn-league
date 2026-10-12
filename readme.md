@@ -39,10 +39,9 @@ For each event, create a new json file under `src/content/events` with a name fo
 
 ```json
 {
-  "title": "Top 8 Decklists",
-  "description": "Summer League Cup",
+  "name": "Summer League Cup",
   "type": "League Cup",
-  "eventDate": "August 2, 2025",
+  "date": "August 2, 2025",
   "decklists": [
     {
       "placement": 1,

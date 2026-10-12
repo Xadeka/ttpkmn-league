@@ -1,8 +1,7 @@
 {
-  "title": "Top 4 Decklists",
-  "description": "August League Challenge",
+  "name": "August League Challenge",
   "type": "League Challenge",
-  "eventDate": "August 9, 2025",
+  "date": "August 9, 2025",
   "decklists": [
     {
       "placement": 1,

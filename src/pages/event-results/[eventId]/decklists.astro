@@ -43,9 +43,14 @@ function getPlacementText(decklist: Decklist) {
   }
   return position + " Place";
 }
+
+let title = "Top Decklists";
+if (event.decklists.length > 1) {
+  title = `Top ${event.decklists.length} Decklists`;
+}
 ---
 
-<DefaultLayout title={event.description + " Results"}>
+<DefaultLayout title={event.type + " Results"}>
   <div class="mb-4 flex">
     <a
       class="hover:bg-link-hover hover:text-bg outline-link-hover rounded-md px-3 py-1 outline transition-colors duration-150"
@@ -55,9 +60,9 @@ function getPlacementText(decklist: Decklist) {
     </a>
   </div>
   <div class="m-auto max-w-3xl">
-    <h2 class="mb-0 text-center">{event.title}</h2>
+    <h2 class="mb-0 text-center">{title}</h2>
     <h3 class="text-muted mb-6 text-center">
-      {event.description} • {event.eventDate}
+      {event.name} • {event.date}
     </h3>
     {event.decklists.map((decklist) => {
       return (
