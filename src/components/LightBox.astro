@@ -1,0 +1,213 @@
+---
+import {
+  faChevronLeft,
+  faChevronRight,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
+import FontAwesomeIcon from "./FontAwesomeIcon.astro";
+import { cn } from "../utils";
+
+interface LightBoxImage {
+  src: string;
+  caption?: string;
+}
+
+interface Props {
+  group: string;
+  images: LightBoxImage[];
+}
+
+const props = Astro.props;
+---
+
+<light-box data-group={props.group}>
+  <dialog
+    class={cn(
+      "fixed inset-0 min-h-screen min-w-screen text-white",
+      "flex items-center justify-center overscroll-contain",
+      "invisible bg-black/0 opacity-0 backdrop-blur-none",
+      "open:visible open:bg-black/60 open:opacity-100 open:backdrop-blur-xs",
+      "transition-[visibility,background-color,opacity,backdrop-filter] duration-300",
+      "backdrop:hidden",
+    )}
+  >
+    <button
+      class="focus-visible:outline-link absolute top-4 right-4 z-10 cursor-pointer rounded border-none bg-black/40 p-3 text-white focus-visible:outline-2 focus-visible:outline-offset-2 md:p-4"
+      data-light-box:close
+    >
+      <FontAwesomeIcon icon={faXmark} />
+    </button>
+
+    <button
+      class="focus-visible:outline-link absolute top-1/2 left-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white focus-visible:outline-2 focus-visible:outline-offset-2 md:p-4"
+      data-light-box:previous
+    >
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </button>
+
+    <ul>
+      {props.images.map((image) => {
+        return (
+          <li>
+            <figure class="flex max-h-screen max-w-[90vw] flex-col items-center overflow-hidden rounded px-6">
+              <img
+                src={image.src}
+                alt=""
+                class="h-auto max-h-screen w-auto max-w-full rounded object-contain shadow-xl"
+              />
+              <figcaption class="sticky bottom-0 px-4 py-2 text-center">
+                {image.caption}
+              </figcaption>
+            </figure>
+          </li>
+        );
+      })}
+    </ul>
+
+    <button
+      class="focus-visible:outline-link absolute top-1/2 right-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white focus-visible:outline-2 focus-visible:outline-offset-2 md:p-4"
+      data-light-box:next
+    >
+      <FontAwesomeIcon icon={faChevronRight} />
+    </button>
+  </dialog>
+</light-box>
+
+<script>
+  class LightBoxElement extends HTMLElement {
+    currentIndex = 0;
+
+    slides: HTMLLIElement[] = [];
+    lastMouseDownTarget: HTMLElement | null = null;
+
+    get dialog(): HTMLDialogElement {
+      const value = this.querySelector("dialog");
+      if (!value) {
+        throw Error("light-box: Unable to find root dialog");
+      }
+      return value;
+    }
+
+    connectedCallback() {
+      this.slides = Array.from(
+        this.dialog.querySelectorAll<HTMLLIElement>("li") ?? [],
+      );
+      this.registerElements();
+      this.registerControls();
+    }
+
+    registerElements() {
+      const selector = `[data-light-box\\:group="${this.dataset.group}"]`;
+      const elements = Array.from(document.querySelectorAll(selector));
+      elements.forEach((element, index) => {
+        element.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.open(index);
+        });
+      });
+    }
+
+    registerControls() {
+      const closeButton = this.dialog.querySelector("[data-light-box\\:close]");
+      closeButton?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.close();
+      });
+
+      const nextButton = this.dialog.querySelector("[data-light-box\\:next]");
+      nextButton?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.next();
+      });
+
+      const previousButton = this.dialog.querySelector(
+        "[data-light-box\\:previous]",
+      );
+      previousButton?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.previous();
+      });
+
+      if (this.slides.length <= 1) {
+        nextButton?.classList.add("hidden");
+        previousButton?.classList.add("hidden");
+      }
+
+      this.addEventListener("mousedown", (e) => {
+        if (!(e.target instanceof HTMLElement)) {
+          return;
+        }
+        this.lastMouseDownTarget = e.target;
+        // Allow event to bubble to determine if the "background" was clicked
+      });
+
+      this.addEventListener("click", (e) => {
+        if (!(e.target instanceof HTMLElement)) {
+          return;
+        }
+        // Do not close the background if these elements were clicked
+        if (["IMG", "FIGCAPTION"].includes(e.target.tagName)) {
+          return;
+        }
+        // Only allow closing if the full click happened within the same target
+        // Sequence: mousedown -> mouseup -> click
+        if (this.lastMouseDownTarget !== e.target) {
+          return;
+        }
+        e.stopPropagation();
+        this.close();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        e.stopPropagation();
+        if (this.classList.contains("hidden")) {
+          return;
+        }
+        if (e.key === "ArrowRight") this.next();
+        if (e.key === "ArrowLeft") this.previous();
+        if (e.key === "Escape") this.close();
+      });
+    }
+
+    open(index: number) {
+      this.currentIndex = index;
+      this.updateImage();
+      this.dialog.showModal();
+      document.body.classList.add("overflow-hidden");
+    }
+
+    close() {
+      this.dialog.close();
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    updateImage() {
+      this.slides.forEach((slide, index) => {
+        if (index === this.currentIndex) {
+          slide.classList.remove("hidden");
+        } else {
+          slide.classList.add("hidden");
+        }
+      });
+    }
+
+    next() {
+      this.currentIndex += 1;
+      if (this.currentIndex >= this.slides.length) {
+        this.currentIndex = 0;
+      }
+      this.updateImage();
+    }
+
+    previous() {
+      this.currentIndex -= 1;
+      if (this.currentIndex < 0) {
+        this.currentIndex = this.slides.length - 1;
+      }
+      this.updateImage();
+    }
+  }
+
+  customElements.define("light-box", LightBoxElement);
+</script>

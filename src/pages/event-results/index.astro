@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+import Card from "../../components/Card.astro";
+import DefaultLayout from "../../layout/DefaultLayout.astro";
+import { cn } from "../../utils";
+
+const pageTitle = "Past Tournament Results";
+
+const eventsCollection = await getCollection("events");
+const events = eventsCollection.reverse().map((item) => {
+  const resultsHref = `/event-results/${item.id}/standings.html`;
+  let decklistsHref = null;
+  if (item.data.decklists.length > 0) {
+    decklistsHref = `/event-results/${item.id}/decklists`;
+  }
+  return {
+    title: item.data.type,
+    date: item.data.date,
+    resultsHref: resultsHref,
+    decklistsHref: decklistsHref,
+  };
+});
+---
+
+<DefaultLayout title={pageTitle}>
+  <div class="mb-4 flex">
+    <a
+      class="hover:bg-link-hover hover:text-bg outline-link-hover rounded-md px-3 py-1 outline transition-colors duration-150"
+      href="/"
+    >
+      ← Back
+    </a>
+  </div>
+  <div class="m-auto max-w-2xl">
+    <h2 class="text-center">{pageTitle}</h2>
+    {events.map((event) => {
+      return (
+        <Card class="mb-3 flex items-center justify-between">
+          {event.title} &ndash; {event.date}
+          <div class="flex gap-2">
+            <a
+              class="outline-link bg-link hover:outline-link-hover hover:text-bg hover:bg-link-hover text-bg rounded-full px-3 py-1 outline transition-colors duration-150"
+              href={event.resultsHref}
+            >
+              Results
+            </a>
+            <a
+              class={cn(
+                "outline-link hover:outline-link-hover rounded-full px-3 py-1 outline",
+                {
+                  invisible: event.decklistsHref === null,
+                },
+              )}
+              href={event.decklistsHref}
+            >
+              Decklists
+            </a>
+          </div>
+        </Card>
+      );
+    })}
+  </div>
+</DefaultLayout>

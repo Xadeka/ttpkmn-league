@@ -1,0 +1,27 @@
+{
+  "name": "August League Challenge",
+  "type": "League Challenge",
+  "date": "August 9, 2025",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "James Hitch",
+      "deckName": "Okidogi/Scizor"
+    },
+    {
+      "placement": 2,
+      "playerName": "Jeff Locke",
+      "deckName": "Miraidon ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "Sachit Soni",
+      "deckName": "Raging Bolt ex/Noctowl"
+    },
+    {
+      "placement": 4,
+      "playerName": "Dylan Sabo",
+      "deckName": "Gardevoir ex"
+    }
+  ]
+}
