@@ -54,6 +54,8 @@ For each event, create a new json file under `src/content/events` with a name fo
 
 The event will appear on the event results page and a decklist page will generated automatically. If decklists are not available, provide an empty array. Run the application locally to confirm the new event shows as expected.
 
+For standings and decklist images, place them under `public/event-results/<YYYYmmdd>-<eventType>`.
+
 ## Development
 
 This project is built with [Astro](https://astro.build/). Refer to [their documentation](https://docs.astro.build/) for guides and references.
