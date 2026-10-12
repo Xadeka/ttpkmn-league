@@ -28,17 +28,18 @@ const props = Astro.props;
       "invisible bg-black/0 opacity-0 backdrop-blur-none",
       "open:visible open:bg-black/40 open:opacity-100 open:backdrop-blur-sm",
       "transition-[visibility,background-color,opacity,backdrop-filter] duration-300",
+      "backdrop:hidden",
     )}
   >
     <button
-      class="absolute top-4 right-4 z-10 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
+      class="focus-visible:outline-link absolute top-4 right-4 z-10 cursor-pointer rounded border-none bg-black/40 p-3 text-white focus-visible:outline-2 focus-visible:outline-offset-2 md:p-4"
       data-light-box:close
     >
       <FontAwesomeIcon icon={faXmark} />
     </button>
 
     <button
-      class="absolute top-1/2 left-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
+      class="focus-visible:outline-link absolute top-1/2 left-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white focus-visible:outline-2 focus-visible:outline-offset-2 md:p-4"
       data-light-box:previous
     >
       <FontAwesomeIcon icon={faChevronLeft} />
@@ -64,7 +65,7 @@ const props = Astro.props;
     </ul>
 
     <button
-      class="absolute top-1/2 right-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white transition-colors md:p-4"
+      class="focus-visible:outline-link absolute top-1/2 right-4 z-10 -translate-y-1/2 cursor-pointer rounded bg-black/40 p-3 text-white focus-visible:outline-2 focus-visible:outline-offset-2 md:p-4"
       data-light-box:next
     >
       <FontAwesomeIcon icon={faChevronRight} />
@@ -172,7 +173,7 @@ const props = Astro.props;
     open(index: number) {
       this.currentIndex = index;
       this.updateImage();
-      this.dialog.show();
+      this.dialog.showModal();
       document.body.classList.add("overflow-hidden");
     }
 
