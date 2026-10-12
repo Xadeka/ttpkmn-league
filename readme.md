@@ -30,7 +30,30 @@ It is recommend to [run the app locally](#run-locally) to verify any new changes
 ### Page Locations
 
 - Home: [`src/pages/index.astro`](./src/pages/index.astro)
-- Event Results: [`src/pages/event-results.astro`](./src/pages/event-results.astro)
+- Event Results: [`src/pages/event-results/index.astro`](./src/pages/event-results/index.astro)
+- Decklists: [`src/pages/event-results/[eventId]/decklists.astro`](./src/pages/event-results/[eventId]/decklists.astro)
+
+### Add Event Results and Decklists
+
+For each event, create a new json file under `src/content/events` with a name following the format `<YYYYmmdd>-<eventType>.json`. The contents of this file follow this format:
+
+```json
+{
+  "title": "Top 8 Decklists",
+  "description": "Summer League Cup",
+  "type": "League Cup",
+  "eventDate": "August 2, 2025",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "...",
+      "deckName": "..."
+    }
+  ]
+}
+```
+
+The event will appear on the event results page and a decklist page will generated automatically. If decklists are not available, provide an empty array. Run the application locally to confirm the new event shows as expected.
 
 ## Development
 
