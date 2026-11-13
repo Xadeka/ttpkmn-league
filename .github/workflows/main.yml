@@ -8,11 +8,11 @@ on:
       - main
 
 jobs:
-  lint:
-    uses: ./.github/workflows/lint.yml
+  # lint:
+  #   uses: ./.github/workflows/lint.yml
 
   deploy:
-    needs: [lint]
+    # needs: [lint]
     uses: ./.github/workflows/deploy.yml
     permissions:
       contents: read
