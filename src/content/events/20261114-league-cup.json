@@ -1,0 +1,27 @@
+{
+  "name": "Season 1 League Cup",
+  "type": "League Cup",
+  "date": "Novemebr 14, 2026",
+  "decklists": [
+    {
+      "placement": 1,
+      "playerName": "Kyle Pyykkonen",
+      "deckName": "Dragapult ex"
+    },
+    {
+      "placement": 2,
+      "playerName": "Tristan Maier",
+      "deckName": "Dragapult ex"
+    },
+    {
+      "placement": 3,
+      "playerName": "gwen durell",
+      "deckName": "Basic Box"
+    },
+    {
+      "placement": 4,
+      "playerName": "Skylar Fox",
+      "deckName": "N's Zoroark ex"
+    }
+  ]
+}
